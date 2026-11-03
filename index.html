@@ -1,0 +1,523 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Malaysia December 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a rail-timetable. Day cards read as departure boards, stops hang off a vertical line, legs between stops show which line to ride. */
+:root{
+  --bg:#F1F4F1; --surface:#FFFFFF; --ink:#10231F; --muted:#56665F; --line:#D3DAD5;
+  --accent:#0B6B57; --accent-ink:#FFFFFF; --signal:#E3B000; --warn-bg:#FFF4D6; --warn-ink:#5A4300;
+  --s1:#0B6B57; --s2:#B07A00; --s3:#3A5A8C; --on-s:#FFFFFF;
+  --kj:#C2185B; --ktm:#C62828; --erl:#37474F; --brt:#1565C0; --mono:#2E7D32; --bus:#6A4C93; --grab:#00875A; --walk:#6B7C75;
+  --f-display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1816; --surface:#14241F; --ink:#E8F0EC; --muted:#9DB0A8; --line:#274038;
+  --accent:#4FC3A1; --accent-ink:#06201A; --signal:#F2C531; --warn-bg:#3A2F0B; --warn-ink:#F4DFA0;
+  --s1:#1E8F76; --s2:#C9962A; --s3:#5C80B8; --on-s:#FFFFFF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1816; --surface:#14241F; --ink:#E8F0EC; --muted:#9DB0A8; --line:#274038;
+  --accent:#4FC3A1; --accent-ink:#06201A; --signal:#F2C531; --warn-bg:#3A2F0B; --warn-ink:#F4DFA0;
+  --s1:#1E8F76; --s2:#C9962A; --s3:#5C80B8; --on-s:#FFFFFF; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.08}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px))}
+nav .row{max-width:1040px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap}
+nav a.d{font-family:var(--f-mono);font-weight:500}
+nav a:hover{border-color:var(--accent);color:var(--accent)}
+nav .sep{flex:none;width:1px;background:var(--line);margin:2px 4px}
+
+/* hero */
+header.hero{padding:36px 0 24px;display:grid;gap:22px}
+.kicker{font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(40px,8vw,84px);font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.lede{max-width:62ch;color:var(--muted);font-size:18px;margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.fact b{display:block;font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fact span{font-weight:600}
+.strip{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px}
+.strip a{display:block;text-decoration:none;color:var(--on-s);padding:8px 6px;border-radius:4px;min-width:0}
+.strip a b{display:block;font-family:var(--f-mono);font-weight:500;font-size:13px}
+.strip a small{display:block;font-size:11px;line-height:1.25;opacity:.95;overflow-wrap:anywhere}
+.s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s0{background:var(--ink);color:var(--bg)!important}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.note{background:var(--warn-bg);color:var(--warn-ink);border-radius:6px;padding:12px 14px;font-size:15px}
+
+/* days */
+section{padding-top:36px}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-h h2{font-size:clamp(26px,4vw,36px);font-weight:700}
+.sec-h p{margin:0;color:var(--muted)}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-bottom:22px;overflow:hidden;scroll-margin-top:70px}
+.day>header{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dnum{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:.9;grid-row:span 2}
+.dnum small{display:block;font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.day h3{font-size:clamp(22px,3.2vw,28px);font-weight:700}
+.basepill{justify-self:start;font-size:13px;font-weight:600;color:var(--on-s);padding:3px 10px;border-radius:999px}
+.tl{list-style:none;margin:0;padding:6px 18px 10px}
+.tl>li{display:grid;grid-template-columns:62px 18px minmax(0,1fr);gap:0 10px}
+.tm{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:14px;text-align:right;font-variant-numeric:tabular-nums}
+.rail{position:relative}
+.rail::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
+.rail::after{content:"";position:absolute;left:3px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+li.leg-li .rail::after{display:none}
+li.leg-li .tm{padding-top:2px}
+.stop{padding:10px 0 12px;min-width:0}
+.stop h4{margin:0;font-size:18px;font-weight:600;font-family:var(--f-body)}
+.stop p{margin:3px 0 0;color:var(--muted);font-size:15px}
+.pins{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pin{font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--accent);color:var(--accent);padding:3px 10px;border-radius:999px}
+.pin:hover{background:var(--accent);color:var(--accent-ink)}
+.leg{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:4px 0 6px;font-size:14px;color:var(--muted);min-width:0}
+.leg .t{min-width:0;flex:1 1 220px}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-family:var(--f-mono);font-size:11.5px;font-weight:500;color:#fff;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.kj{background:var(--kj)}.ktm{background:var(--ktm)}.erl{background:var(--erl)}.brt{background:var(--brt)}.mono-l{background:var(--mono)}.bus{background:var(--bus)}.grab{background:var(--grab)}.walk{background:var(--walk)}
+.leg a{font-size:13px;font-weight:600}
+.tips{border-top:1px dashed var(--line);margin:0;padding:12px 18px 16px;list-style:none;display:grid;gap:6px;font-size:15px}
+.tips li{padding-left:16px;position:relative}
+.tips li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;background:var(--signal);border-radius:1px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.card h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.card p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.card .meta{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-top:8px}
+.stay-top{height:6px;border-radius:3px;margin-bottom:12px}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:1px 6px;margin-right:4px;color:var(--muted)}
+.tag.warn{background:var(--warn-bg);color:var(--warn-ink);border-color:transparent}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 12px;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
+.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+footer{margin-top:40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:560px){
+  .tl>li{grid-template-columns:48px 16px minmax(0,1fr)}
+  .tl{padding-inline:12px}
+  .dnum{font-size:44px}
+  .strip a small{font-size:10.5px}
+  .day>header{padding:14px 12px}
+}
+@media (prefers-reduced-motion:no-preference){.pin{transition:background .15s,color .15s}}
+</style>
+
+<div class="wrap">
+<nav aria-label="Sections"><div class="row" id="navrow"></div></nav>
+
+<header class="hero">
+  <div class="kicker">Kuala Lumpur · Genting Highlands · 24 to 31 December 2026</div>
+  <h1>Malaysia, <span>eight days</span></h1>
+  <p class="lede">Two adults and an 8-year-old. Three hotels, one night up the mountain, public transport wherever it works. Every stop has a map pin, every leg says which line to ride.</p>
+  <div class="facts">
+    <div class="fact"><b>Arrive</b><span>Thu 24 Dec, 16:15 · KLIA (via Singapore)</span></div>
+    <div class="fact"><b>Depart</b><span>Thu 31 Dec, 11:05 · KLIA</span></div>
+    <div class="fact"><b>Genting</b><span>Sun 27 to Mon 28 Dec</span></div>
+    <div class="fact"><b>Pay and ride</b><span>Touch 'n Go eWallet · MyRapid PULSE</span></div>
+  </div>
+  <div>
+    <div class="strip" id="strip" role="list" aria-label="Where you sleep each night"></div>
+    <div class="legend" style="margin-top:10px"><span><i class="s1"></i>KLCC Sky Villa Suites The Mews</span><span><i class="s2"></i>Le Vert Boutique Hotel</span><span><i class="s3"></i>Societe Suites by iHost Global</span></div>
+  </div>
+  <div class="note"><b>Check before you go.</b> Opening hours, ticket prices and which cable car is running come from listings found on 28 Oct 2026. Treat them as a guide and confirm on the official sites linked below. Pictures are not embedded here, so use the pin buttons to see each place on Google Maps.</div>
+</header>
+
+<section id="days-sec" style="padding-top:8px">
+  <div class="sec-h"><h2>Day by day</h2><p>Tap a pin to open Google Maps. Tap "Transit route" for live directions from where you are.</p></div>
+  <div id="days"></div>
+  <div class="card" style="margin-bottom:8px">
+    <h3>Not scheduled: Jonker Street</h3>
+    <p>Your list had Jonker Street under Kuala Lumpur, but the famous Jonker Street night market is in Melaka, roughly two hours each way. It needs a full day, so use the free day on Wed 30 Dec. The night market itself runs on weekend evenings.</p>
+    <div class="pins"><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jonker%20Street%20Melaka">Pin: Jonker Street, Melaka</a></div>
+  </div>
+</section>
+
+<section id="stays">
+  <div class="sec-h"><h2>Where you sleep</h2><p>All three confirmed on Booking.com.</p></div>
+  <div class="grid" id="staygrid"></div>
+</section>
+
+<section id="food">
+  <div class="sec-h"><h2>Michelin Bib Gourmand list</h2><p>Six places, each placed on a day.</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Eatery</th><th>Known for</th><th>Where</th><th>Planned</th><th>Pin</th></tr></thead>
+    <tbody id="foodbody"></tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:14px;margin-top:10px">Also on the plan: Jalan Alor Food Street (Thu 24 Dec). Wikipedia's 2026 column marks Heun Kee as closed while Michelin's 2026 list still names it, so check it is open before you walk over. Lai Foong is also spelled Lai Fong in Michelin's own pages.</p>
+</section>
+
+<section id="shop">
+  <div class="sec-h"><h2>Shopping</h2><p>Cheap first, then the polished malls.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Cheap and bulk</h3><p>Petaling Street (Sat 26), Plaza GM, Mydin, Ecoplus and Haniffa Department Store (Tue 29). Open each saved pin and group them by distance, then take one Grab between clusters.</p>
+      <div class="pins" id="pins-cheap"></div></div>
+    <div class="card"><h3>Higher end</h3><p>Pavilion Kuala Lumpur on Christmas evening (Fri 25) and Berjaya Times Square on Tue 29. Genting Highlands Premium Outlets sits at the Awana cable car station on Mon 28.</p>
+      <div class="pins" id="pins-fancy"></div></div>
+  </div>
+</section>
+
+<section id="move">
+  <div class="sec-h"><h2>Getting around</h2><p>Public transport first, Grab for the awkward legs.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Apps to set up now</h3>
+      <p><b>Touch 'n Go eWallet</b> pays for trains, buses and most shops. Check what verification a foreign passport needs and set it up before you fly.</p>
+      <p><b>MyRapid PULSE</b> and <b>Moovit</b> show Rapid KL bus and rail times. <b>Grab</b> covers taxis.</p>
+      <div class="pins"><a class="pin" target="_blank" rel="noopener" href="https://myrapid.com.my">MyRapid</a><a class="pin" target="_blank" rel="noopener" href="https://www.kliaekspres.com">KLIA Ekspres</a><a class="pin" target="_blank" rel="noopener" href="https://www.ktmb.com.my">KTMB Komuter</a></div></div>
+    <div class="card"><h3>Lines you will use</h3>
+      <p><span class="chip kj">LRT Kelana Jaya</span> runs KLCC, Pasar Seni, KL Sentral, Masjid Jamek and ends at Gombak. It is your spine.</p>
+      <p><span class="chip erl">KLIA Ekspres</span> airport to KL Sentral in about 30 minutes.</p>
+      <p><span class="chip ktm">KTM Komuter</span> KL Sentral to Batu Caves and to Setia Jaya for Sunway.</p>
+      <p><span class="chip brt">BRT Sunway</span> Setia Jaya or USJ 7 to Sunway Lagoon.</p></div>
+    <div class="card"><h3>Genting: which cable car?</h3>
+      <p>Buses from Kuala Lumpur go to either the Awana terminal (Awana SkyWay) or the Gohtong Jaya complex (Genting SkyWay), depending on which one is running that day. You go up by Grab on 27 Dec, so this matters for 28 Dec. Read your skyway booking to see which one it names.</p>
+      <div class="pins"><a class="pin" target="_blank" rel="noopener" href="https://www.gentingskyworlds.com">Genting SkyWorlds</a><a class="pin" target="_blank" rel="noopener" href="https://easybook.com">Easybook buses</a></div></div>
+  </div>
+</section>
+
+<section id="list">
+  <div class="sec-h"><h2>Before you fly</h2><p>Ticks stay on this device.</p></div>
+  <ul class="check" id="checklist"></ul>
+</section>
+
+<footer>Built 28 Oct 2026 from your itinerary notes. Dates fall on Thu 24 Dec to Thu 31 Dec 2026. Fares, hours and ticket prices change, so confirm each on the official site.</footer>
+</div>
+
+<script>
+(function(){
+var MAP="https://www.google.com/maps/search/?api=1&query=";
+function pinUrl(q){return MAP+encodeURIComponent(q);}
+function dirUrl(a,b){return "https://www.google.com/maps/dir/?api=1&travelmode=transit&origin="+encodeURIComponent(a)+"&destination="+encodeURIComponent(b);}
+var LINES={kj:["LRT Kelana Jaya","kj"],ktm:["KTM Komuter","ktm"],erl:["KLIA Ekspres","erl"],brt:["BRT Sunway","brt"],bus:["Bus","bus"],grab:["Grab or taxi","grab"],walk:["Walk","walk"],mono:["Monorail","mono-l"]};
+var ASTERN="KLCC Sky Villa Suites The Mews", LEVERT="Le Vert Boutique Hotel", SOC="Societe Suites by iHost Global";
+
+var DAYS=[
+{id:"d24",n:24,dow:"Thu",stay:1,title:"Land, check in, KLCC and street food",stops:[
+ {t:"16:15",name:"Kuala Lumpur International Airport (KLIA)",q:"KLIA Terminal 1 Sepang",note:"Your flight from Singapore lands. Allow 60 to 90 minutes for immigration and bags."},
+ {leg:{lines:["erl","kj"],text:"KLIA Ekspres to KL Sentral (about 30 min), then LRT Kelana Jaya line to KLCC (about 15 min). The hotel is about an 8 minute walk from KLCC station, or a short Grab with bags.",dir:["KLIA Terminal 1","KLCC Kuala Lumpur"]}},
+ {t:"18:30",name:ASTERN,q:"The Mews Jalan Yap Kwan Seng Kuala Lumpur",note:"Check in and drop bags. The Mews is on Jalan Yap Kwan Seng, an easy walk from KLCC. Confirm the exact tower and address on your Booking.com page."},
+ {t:"19:30",name:"KLCC Park and Petronas Twin Towers",q:"KLCC Park Kuala Lumpur",note:"An easy first evening. The towers are lit at night and the park has a playground for your 8-year-old."},
+ {leg:{lines:["walk","grab"],text:"About 20 minutes on foot toward Bukit Bintang, or a short Grab."}},
+ {t:"20:30",name:"Jalan Alor Food Street",q:"Jalan Alor Food Street Kuala Lumpur",note:"Share a few dishes between three. It is busy and loud after dark."}
+],tips:["The towers and the park are about 10 minutes on foot from your hotel, so you can come back any evening.","Buy a local eSIM or confirm roaming before landing so Grab works straight away."]},
+
+{id:"d25",n:25,dow:"Fri",stay:1,title:"Batu Caves, bak kut teh, Thean Hou, Christmas lights",stops:[
+ {t:"08:30",name:"Batu Caves",q:"Batu Caves Temple Gombak",note:"272 steps to the main cave. Go early before the heat and the crowds. Keep snacks in a bag because the macaques grab food. Cover shoulders and knees.",leg:{lines:["kj","ktm"],text:"LRT Kelana Jaya line from KLCC to KL Sentral, then KTM Komuter to Batu Caves, the end of the line (about 30 min).",dir:["KLCC Kuala Lumpur","Batu Caves KTM Station"]}},
+ {leg:{lines:["grab"],text:"Grab to Kepong, about 20 to 30 minutes. There is no direct train."}},
+ {t:"12:30",name:"Hing Kee Bakuteh",q:"Hing Kee Bakuteh 121 Jalan Kepong Taman Usahawan Kuala Lumpur",note:"Michelin Bib Gourmand bak kut teh, 121 Jalan Kepong. Check opening hours first, it is a local favourite and fills up."},
+ {leg:{lines:["grab"],text:"Grab to Seputeh, about 30 to 40 minutes in traffic."}},
+ {t:"15:00",name:"Thean Hou Temple",q:"Thean Hou Temple Kuala Lumpur",note:"A six-tiered Chinese temple on a hill with city views. Good photos, easy walking."},
+ {leg:{lines:["grab","mono"],text:"Grab to Bukit Bintang, or Grab to a Monorail station then Monorail."}},
+ {t:"18:30",name:"Pavilion Kuala Lumpur",q:"Pavilion Kuala Lumpur Bukit Bintang",note:"Higher-end mall, usually decorated for Christmas in late December. Dinner here or nearby. Mon Chinese Roti @ Pavilion KL is a bakery in the mall (listed RM 1 to 20, 4.4 on Google) for a snack.",more:[{name:"Mon Chinese Roti @ Pavilion KL",q:"Mon Chinese Roti Pavilion KL"}]},
+ {leg:{lines:["walk"],text:"Short walk along Jalan Bukit Bintang."}},
+ {t:"20:00",name:"Bukit Bintang: KKV and Plaza Low Yat",q:"Bukit Bintang Kuala Lumpur",note:"KKV Bukit Bintang is a variety store and Plaza Low Yat is a big electronics mall. The strip is busy on Christmas night, so keep your child close.",more:[{name:"KKV Bukit Bintang",q:"KKV Bukit Bintang Kuala Lumpur"},{name:"Plaza Low Yat",q:"Plaza Low Yat Kuala Lumpur"}]}
+],tips:["This is the longest day on foot. If your 8-year-old tires, drop Thean Hou and go straight to Pavilion.","Christmas Day: some small eateries may be closed. Hing Kee is worth a quick check."]},
+
+{id:"d26",n:26,dow:"Sat",stay:1,title:"Bird Park to Chinatown",stops:[
+ {t:"09:00",name:"KL Bird Park",q:"KL Bird Park Jalan Cenderawasih Kuala Lumpur",note:"A walk-through aviary in the Lake Gardens. Birds are most active in the morning and it is shaded.",leg:{lines:["grab"],text:"Grab from the hotel, about 20 minutes. Return by Grab as well."}},
+ {t:"12:30",name:"Masjid Jamek",q:"Masjid Jamek Kuala Lumpur",note:"Where the Klang and Gombak rivers meet. You come back at 9 pm tonight for River of Life, when the fountains and lights are on.",leg:{lines:["grab","kj"],text:"Grab to Masjid Jamek LRT station, or LRT Kelana Jaya line via KL Sentral."}},
+ {t:"13:30",name:"Bangunan Sultan Abdul Samad",q:"Sultan Abdul Samad Building Kuala Lumpur",note:"Colonial-era building facing Merdeka Square. A photo stop, no need to go in.",leg:{lines:["walk"],text:"About 5 minutes on foot."}},
+ {t:"15:00",name:"Central Market",q:"Central Market Kuala Lumpur Pasar Seni",note:"Crafts and batik, air-conditioned. Cooler than the street in the afternoon.",leg:{lines:["kj"],text:"Masjid Jamek to Pasar Seni on the LRT, one stop, or walk 15 minutes."}},
+ {t:"16:30",name:"Petaling Street (Chinatown)",q:"Petaling Street Chinatown Kuala Lumpur",note:"Cheap shopping. Bargain politely and start at about half the first price.",leg:{lines:["walk"],text:"5 minutes on foot from Central Market."}},
+ {t:"19:00",name:"Nam Heong Chicken Rice",q:"Nam Heong Chicken Rice Kuala Lumpur city centre",note:"Michelin Bib Gourmand Hainanese chicken rice, listed under City Centre. Pick this or its neighbour.",more:[{name:"Sin Kiew Yee Shin Kee Beef Noodles",q:"Sin Kiew Yee Shin Kee Beef Noodles Kuala Lumpur"}]},
+ {leg:{lines:["grab","kj"],text:"Short Grab, or LRT Kelana Jaya line to Masjid Jamek."}},
+ {t:"21:00",name:"River of Life",q:"River of Life Kuala Lumpur",note:"Your 9 pm stop. The confluence is lit up and the fountains run in the evening. Take the LRT Kelana Jaya line straight back to KLCC afterwards."}
+],tips:["Saturday means crowds in Chinatown. Do Central Market first, then Petaling Street, and eat before the evening crush.","Jonker Street is in Melaka, not here. See the note below the days."]},
+
+{id:"d27",n:27,dow:"Sun",stay:2,title:"KL to Genting Highlands",stops:[
+ {t:"09:00",name:"Check out of "+ASTERN,q:"The Mews Jalan Yap Kwan Seng Kuala Lumpur",note:"Take all bags. You do not return to this hotel."},
+ {leg:{lines:["grab"],text:"Grab from KLCC up to Genting, about 1 to 1.5 hours in total. Choose Grab XL if your bags need it, set the drop-off to your hotel, and leave by 09:30 to 10:00 to beat the Sunday crowd. Check the fare in the app."}},
+ {t:"10:15",name:"Ninso Gombak",q:"Ninso Gombak",note:"A quick stop from your saved list, near the road toward Genting. Ask your driver to stop, or skip it if Sunday traffic is heavy."},
+ {t:"12:00",name:LEVERT,q:"Le Vert Boutique Hotel Genting Highlands",note:"Arrive by Grab with all your bags. Confirm the address on your Booking.com page. If check-in is not open yet, leave bags with the desk."},
+ {t:"15:30",name:"First World Plaza, Ripley's Adventureland, Genting Snow World",q:"First World Plaza Genting Highlands",note:"Indoor attractions that suit a crowded Sunday. Save the outdoor theme park for Monday.",more:[{name:"Ripley's Adventureland",q:"Ripley's Adventureland Genting Highlands"},{name:"Genting Snow World",q:"Genting Snow World Genting Highlands"}]},
+ {t:"17:30",name:"Chin Swee Caves Temple",q:"Chin Swee Caves Temple Genting Highlands",note:"A temple with a pagoda and views, cooler up here. Check closing time and go before dusk.",leg:{lines:["grab"],text:"Taxi or resort shuttle from the main resort area."}},
+ {t:"19:00",name:"Dinner at SkyAvenue or First World Plaza",q:"SkyAvenue Genting Highlands",note:"Plenty of food courts and restaurants at the resort."}
+],tips:["Sunday is a peak day at Genting, so leave KL early and keep the day to indoor stops.","It is much cooler on the mountain. Pack a light jacket for the evening.","With a Grab you can bring all your bags. Ask Le Vert to hold them if you arrive before check-in."]},
+
+{id:"d28",n:28,dow:"Mon",stay:3,title:"SkyWorlds, the booked skyway, back to KL",stops:[
+ {t:"08:30",name:"Breakfast and check out",q:"Le Vert Boutique Hotel Genting Highlands",note:"Check out and take bags with you or to the cable car station."},
+ {t:"10:00",name:"Genting SkyWorlds (booked)",q:"Genting SkyWorlds Theme Park",note:"Outdoor park, opens 10:00 and closes 18:00 on listed hours. A weekday should be lighter than Sunday. Tickets are priced by height, and a child above 110 cm needs an adult ticket, which an 8-year-old often is. Use the free virtual queue reservations in the app."},
+ {t:"14:00",name:"Genting Skytropolis (indoor)",q:"Genting Skytropolis Indoor Theme Park",note:"Open from 11:00 on listed hours. A good fallback in rain, or choose one park only if energy is low."},
+ {t:"16:00",name:"Your booked skyway down",q:"Awana SkyWay Genting Highlands",note:"Your 28 Dec booking is described as the skyway. Check whether it is Awana or Genting SkyWay and which station it uses, then plan your exit around its time."},
+ {t:"16:45",name:"Genting Highlands Premium Outlets",q:"Genting Highlands Premium Outlets",note:"Outlet shopping at the Awana station. Quick browse before the bus."},
+ {t:"18:00",name:"Bus to KL Sentral",q:"Awana Transport Hub Genting Highlands",note:"Express buses run back to Kuala Lumpur, about 1 to 1.5 hours.",leg:{lines:["bus"],text:"Bus from the Awana terminal, or from Gohtong Jaya if that is the cable car in use. With heavy bags, a Grab from the hotel straight to Societe Suites is simpler."}},
+ {t:"20:00",name:"Check in at "+SOC,q:"Societe Suites by iHost Global Kuala Lumpur",note:"Open your Booking.com confirmation for the exact address and nearest station.",leg:{lines:["kj","grab"],text:"From KL Sentral, Grab is the simplest with bags."}}
+],tips:["Skytropolis hours quoted: 11:00 to 21:00 Mon to Fri and Sun, 11:00 to 22:00 Sat. SkyWorlds: 10:00 to 18:00, closed Tuesdays except public and school holidays.","Ticket prices seen online: SkyWorlds about RM 168 online for non-Malaysians, Skytropolis about RM 84 unlimited. Confirm on the official site."]},
+
+{id:"d29",n:29,dow:"Tue",stay:3,title:"Immersify, Pudu food run and shopping",stops:[
+ {t:"08:45",name:"Hotel breakfast",q:"Societe Suites by iHost Global Kuala Lumpur",note:"Slow morning after a long Monday."},
+ {t:"10:00",name:"Immersify KL (booked)",q:"Immersify KL The Labs BBCC 2 Jalan Hang Tuah Kuala Lumpur",note:"Your timed entry, the first slot of the day. Plan about 2 hours. Have your voucher and confirmation open on your phone before you arrive.",leg:{lines:["grab"],text:"Grab to BBCC on Jalan Hang Tuah."}},
+ {t:"12:15",name:"Wong Mei Kee",q:"Wong Mei Kee 30 Jalan Nyonya Pudu Kuala Lumpur",note:"Michelin Bib Gourmand. Famous for crackling roast pork (siew yoke). Roast meats can sell out, so come straight after Immersify. 30 Jalan Nyonya, off Jalan Pudu. Kedai Kopi Pudu 168 Pan Mee is a hawker stall nearby, saved for its claypot chicken rice, if you want a second plate.",more:[{name:"Kedai Kopi Pudu 168",q:"Kedai Kopi Pudu 168 Pan Mee Kuala Lumpur"}],leg:{lines:["grab"],text:"Grab to Pudu."}},
+ {t:"14:00",name:"Berjaya Times Square",q:"Berjaya Times Square Kuala Lumpur",note:"Large mall with an indoor theme park for your 8-year-old. Jungle Gym Berjaya Times Square is the indoor playground there, rated 4.5 on Google.",more:[{name:"Jungle Gym Berjaya Times Square",q:"Jungle Gym Berjaya Times Square Kuala Lumpur"}],leg:{lines:["grab","mono"],text:"Short Grab or Monorail toward Imbi."}},
+ {t:"15:30",name:"Cheap shopping run",q:"Plaza GM Kuala Lumpur",note:"Plaza GM, Mydin, Ecoplus and Haniffa Department Store. Open each pin and visit the ones closest together. Take one Grab between clusters.",more:[{name:"Mydin",q:"Mydin Kuala Lumpur"},{name:"Ecoplus",q:"Ecoplus Kuala Lumpur"},{name:"Haniffa Department Store",q:"Haniffa Department Store Kuala Lumpur"}]},
+ {t:"17:30",name:"Changkat Bukit Bintang and 2 Tengkat Tong Shin",q:"Changkat Bukit Bintang Kuala Lumpur",note:"Cafes and old shophouses. With a child, stay early evening because the strip gets loud after dark.",more:[{name:"2 Tengkat Tong Shin",q:"2 Tengkat Tong Shin Kuala Lumpur"}]},
+ {t:"19:00",name:"Lai Foong Lala Noodles",q:"Lai Foong Lala Noodles Bukit Bintang Kuala Lumpur",note:"Michelin Bib Gourmand clam noodles (lala bihun) in a broth with Shaoxing wine and ginger. It has two floors."}
+],tips:["Heun Kee Claypot Chicken Rice (59 Jalan Yew, Pudu) is also close to the Wong Mei Kee street. Check it is open and when, then add it to lunch or dinner if you like.","This is a loose day. Cut anything that drags."]},
+
+{id:"d30",n:30,dow:"Wed",stay:3,title:"Free day, you choose",stops:[
+ {t:"09:00",name:"Option A: Melaka day trip",q:"Jonker Street Melaka",note:"About 2 hours each way by bus from TBS (Terminal Bersepadu Selatan). Book bus tickets ahead in holiday season. Jonker Street's night market runs on weekend evenings, so on a Wednesday expect the shops and cafes, not the market.",leg:{lines:["bus"],text:"Grab to TBS, then an express bus to Melaka Sentral."}},
+ {t:"10:30",name:"Option B: KLCC Aquaria and a slow day",q:"Aquaria KLCC Kuala Lumpur",note:"No booking needed. Easy on the legs after Genting. Add last-minute shopping at Pavilion or Berjaya Times Square.",more:[{name:"Pavilion KL",q:"Pavilion Kuala Lumpur Bukit Bintang"}]},
+ {t:"12:30",name:"EPL Cafe roti canai",q:"EPL Cafe roti canai Kuala Lumpur",note:"Casual roti canai lunch, listed RM 1 to 20 and rated 4.2 on Google. Option B only."},
+ {t:"14:00",name:"SuperPark Malaysia",q:"SuperPark Malaysia",note:"Indoor playground rated 4.9 on Google from over 13,000 reviews. A good energy-burner for your 8-year-old. Check hours and booking on their site.",leg:{lines:["grab"],text:"Grab to the playground, then on to TRX."}},
+ {t:"17:00",name:"TRX City Park and I'm Donut? TRX",q:"TRX City Park Kuala Lumpur",note:"The park at Tun Razak Exchange (4.5 on Google), then donuts in the TRX mall (listed RM 20 to 80).",more:[{name:"I'm Donut? TRX",q:"I'm Donut TRX Kuala Lumpur"}]},
+ {t:"19:30",name:"Back at "+SOC,q:"Societe Suites by iHost Global Kuala Lumpur",note:"Pack tonight. Your flight is at 11:05 tomorrow."}
+],tips:["Pick A or B the night before, depending on how tired everyone is.","Option B stacks four stops. Drop SuperPark or TRX if energy is low.","Sunway Lagoon is dropped from the plan."]},
+
+{id:"d31",n:31,dow:"Thu",stay:0,title:"Departure",stops:[
+ {t:"06:30",name:"Leave "+SOC,q:"Societe Suites by iHost Global Kuala Lumpur",note:"Check out and leave for KL Sentral. Confirm with your airline how early you must be at KLIA for the 11:05 flight, about three hours before is typical for an international departure."},
+ {leg:{lines:["grab","erl"],text:"Grab to KL Sentral, then KLIA Ekspres to KLIA (about 30 min). Check the first train time the night before.",dir:["KL Sentral","KLIA Terminal 1"]}},
+ {t:"08:00",name:"KLIA",q:"KLIA Terminal 1 Sepang",note:"Check in, drop bags, spend the last ringgit on snacks. Flight at 11:05."}
+],tips:["Keep passports and boarding passes in one pocket.","Your flight transits Singapore, so check onward baggage rules and any arrival card needs for the next leg."]}
+];
+
+var STAYS=[
+{cls:"s1",name:ASTERN,dates:"24 to 27 Dec · 3 nights",price:"Price: see your Booking.com confirmation",note:"Replaces Platinum Astern SUITES. The Mews, Jalan Yap Kwan Seng. About 560 m (8 min walk) to KLCC LRT and about 940 m to Persiaran KLCC MRT. Base for the Batu Caves, Bird Park and Chinatown days. Check out on Sun 27 Dec.",q:"The Mews Jalan Yap Kwan Seng Kuala Lumpur"},
+{cls:"s2",name:LEVERT,dates:"27 to 28 Dec · 1 night",price:"LKR 33,263",note:"Your Genting night. Confirm on Booking.com that the address is on the mountain and how far it is from the cable car and the parks.",q:"Le Vert Boutique Hotel Genting Highlands"},
+{cls:"s3",name:SOC,dates:"28 to 31 Dec · 3 nights",price:"LKR 103,937",note:"Base for the shopping, Sunway Lagoon and departure days. Check the nearest station from your confirmation.",q:"Societe Suites by iHost Global Kuala Lumpur"}
+];
+
+var FOOD=[
+["Wong Mei Kee","Roast pork, char siew","30 Jalan Nyonya, off Jalan Pudu","Tue 29 Dec, lunch after Immersify","Wong Mei Kee 30 Jalan Nyonya Pudu Kuala Lumpur"],
+["Heun Kee Claypot Chicken Rice","Claypot rice over charcoal","59 Jalan Yew, Pudu","Optional Tue 29 Dec. Check it is open","Heun Kee Claypot Chicken Rice 59 Jalan Yew Pudu Kuala Lumpur"],
+["Hing Kee Bakuteh","Bak kut teh, wet and dry","121 Jalan Kepong, Taman Usahawan","Fri 25 Dec, lunch","Hing Kee Bakuteh 121 Jalan Kepong Kuala Lumpur"],
+["Nam Heong Chicken Rice","Hainanese chicken rice","City Centre","Sat 26 Dec, dinner","Nam Heong Chicken Rice Kuala Lumpur"],
+["Sin Kiew Yee Shin Kee","Beef noodles","City Centre","Sat 26 Dec, dinner alternative","Sin Kiew Yee Shin Kee Beef Noodles Kuala Lumpur"],
+["Lai Foong Lala Noodles","Clam noodles (lala bihun)","Bukit Bintang","Tue 29 Dec, dinner","Lai Foong Lala Noodles Bukit Bintang Kuala Lumpur"]
+];
+
+var CHEAP=[["Petaling Street","Petaling Street Chinatown Kuala Lumpur"],["Plaza GM","Plaza GM Kuala Lumpur"],["Mydin","Mydin Kuala Lumpur"],["Ecoplus","Ecoplus Kuala Lumpur"],["Haniffa Department Store","Haniffa Department Store Kuala Lumpur"]];
+var FANCY=[["Pavilion KL","Pavilion Kuala Lumpur Bukit Bintang"],["Berjaya Times Square","Berjaya Times Square Kuala Lumpur"],["Genting Premium Outlets","Genting Highlands Premium Outlets"]];
+
+var CHECK=[
+"Passports valid for at least six months from 24 Dec, and visa rules checked for every traveller",
+"Submit the Malaysia Digital Arrival Card for each traveller if it applies to your passports. Check the official immigration site for the deadline",
+"Download Booking.com confirmations for all three hotels so they work offline",
+"Read the 28 Dec skyway booking: which cable car, which station, which time",
+"Set up Touch 'n Go eWallet, MyRapid PULSE, Moovit and Grab",
+"Keep your Immersify KL and SkyWorlds confirmations where you can open them offline",
+"Check the child's height for the SkyWorlds ticket tier, and set up the SkyWorlds virtual queue in the app",
+"Light jacket for Genting, modest clothes for Batu Caves, swimwear for Sunway Lagoon",
+"Travel insurance and some ringgit cash for small stalls",
+"Check KLIA Ekspres first train for 31 Dec and the airline's check-in cut-off"
+];
+
+function el(h){var d=document.createElement("div");d.innerHTML=h;return d.firstElementChild;}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+function pinA(name,q,label){return '<a class="pin" target="_blank" rel="noopener" href="'+pinUrl(q)+'">'+esc(label||("Pin: "+name))+'</a>';}
+var STAYNAMES=[null,ASTERN,LEVERT,SOC];
+
+var daysEl=document.getElementById("days");
+DAYS.forEach(function(d){
+  var stayCls=d.stay?("s"+d.stay):"s3";
+  var html='<article class="day" id="'+d.id+'"><header><div class="dnum"><small>'+d.dow+' Dec</small>'+d.n+'</div><h3>'+esc(d.title)+'</h3>'+
+    '<span class="basepill '+stayCls+'">'+(d.stay?("Night: "+esc(STAYNAMES[d.stay])):"Departure day")+'</span></header><ol class="tl">';
+  d.stops.forEach(function(s){
+    if(s.leg){
+      var chips=s.leg.lines.map(function(k){return '<span class="chip '+LINES[k][1]+'">'+LINES[k][0]+'</span>';}).join("");
+      var dir=s.leg.dir?' <a target="_blank" rel="noopener" href="'+dirUrl(s.leg.dir[0],s.leg.dir[1])+'">Transit route</a>':"";
+      html+='<li class="leg-li"><span class="tm"></span><span class="rail"></span><div class="leg"><span class="chips">'+chips+'</span><span class="t">'+esc(s.leg.text)+dir+'</span></div></li>';
+    }
+    if(s.t){
+      if(s.leg&&!s.name){return;}
+      var pins=pinA(s.name,s.q);
+      (s.more||[]).forEach(function(m){pins+=pinA(m.name,m.q);});
+      html+='<li><span class="tm">'+esc(s.t)+'</span><span class="rail"></span><div class="stop"><h4>'+esc(s.name)+'</h4><p>'+esc(s.note)+'</p><div class="pins">'+pins+'</div></div></li>';
+    }
+  });
+  html+='</ol><ul class="tips">'+d.tips.map(function(t){return '<li>'+esc(t)+'</li>';}).join("")+'</ul></article>';
+  daysEl.appendChild(el(html));
+});
+
+var strip=document.getElementById("strip");
+DAYS.forEach(function(d){
+  strip.appendChild(el('<a role="listitem" class="'+(d.stay?("s"+d.stay):"s0")+'" href="#'+d.id+'"><b>'+d.n+' '+d.dow+'</b><small>'+(d.stay?(d.stay===1?"KLCC":d.stay===2?"Genting":"KL Societe"):"Fly home")+'</small></a>'));
+});
+
+var sg=document.getElementById("staygrid");
+STAYS.forEach(function(s){
+  sg.appendChild(el('<div class="card"><div class="stay-top '+s.cls+'"></div><h3>'+esc(s.name)+'</h3><div class="meta">'+esc(s.dates)+' · '+esc(s.price)+'</div><p>'+esc(s.note)+'</p><div class="pins">'+pinA(s.name,s.q,"Pin on map")+'<a class="pin" target="_blank" rel="noopener" href="https://www.booking.com">Booking.com</a></div></div>'));
+});
+
+var fb=document.getElementById("foodbody");
+FOOD.forEach(function(f){
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td><b>'+esc(f[0])+'</b></td><td>'+esc(f[1])+'</td><td>'+esc(f[2])+'</td><td>'+esc(f[3])+'</td><td>'+pinA(f[0],f[4],"Pin")+'</td>';
+  fb.appendChild(tr);
+});
+CHEAP.forEach(function(c){document.getElementById("pins-cheap").insertAdjacentHTML("beforeend",pinA(c[0],c[1],c[0]));});
+FANCY.forEach(function(c){document.getElementById("pins-fancy").insertAdjacentHTML("beforeend",pinA(c[0],c[1],c[0]));});
+
+var nav=document.getElementById("navrow");
+DAYS.forEach(function(d){nav.insertAdjacentHTML("beforeend",'<a class="d" href="#'+d.id+'">'+d.n+'</a>');});
+nav.insertAdjacentHTML("beforeend",'<span class="sep"></span><a href="#stays">Stays</a><a href="#food">Food</a><a href="#shop">Shopping</a><a href="#move">Transport</a><a href="#list">Checklist</a>');
+
+var KEY="malaysia-dec-2026-checklist", saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){saved={};}
+var cl=document.getElementById("checklist");
+CHECK.forEach(function(t,i){
+  var li=document.createElement("li");
+  var id="chk"+i;
+  li.innerHTML='<label for="'+id+'"><input type="checkbox" id="'+id+'"'+(saved[id]?" checked":"")+'><span>'+esc(t)+'</span></label>';
+  li.querySelector("input").addEventListener("change",function(e){
+    saved[id]=e.target.checked;
+    try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(err){}
+  });
+  cl.appendChild(li);
+});
+
+/* ===== interactive layer: navigate, tick off, today mode, export ===== */
+var st=document.createElement('style');
+st.textContent=`.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.btn{font:600 14px var(--f-body);padding:9px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--surface);color:var(--accent);cursor:pointer;text-decoration:none;display:inline-block}.btn.pri{background:var(--accent);color:var(--accent-ink)}.pin.go{background:var(--accent);color:var(--accent-ink)}.pin.dn{background:transparent;cursor:pointer;font-family:inherit}li.done .stop h4,li.done .stop p{text-decoration:line-through;opacity:.55}li.done .rail::after{background:var(--accent)}.dayact{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:10px 18px;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}.day.today{outline:3px solid var(--signal)}.todaytag{background:var(--signal);color:#10231F;font-family:var(--f-mono);font-size:12px;padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}#nextbar{position:fixed;left:0;right:0;bottom:0;z-index:11;background:var(--ink);color:var(--bg);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;gap:10px;align-items:center;justify-content:space-between}#nextbar b{display:block}#nextbar a{background:var(--signal);color:#10231F;font-weight:700;text-decoration:none;padding:10px 16px;border-radius:999px;white-space:nowrap}.tools{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:10px}.tools p{margin:0;font-size:14px;color:var(--muted)}.trrow{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font-size:13px;color:var(--muted)}.trrow .i{display:inline-flex;align-items:center;gap:6px}.ag{background:#E8710A}.mrt{background:#2E7D32}.mo{background:#6A9E1F}`;
+document.head.appendChild(st);
+
+var DKEY='malaysia-dec-2026-done', done={};
+var KIND={kj:['🚇 LRT','kj'],ag:['🚇 LRT','ag'],mrt:['🚇 MRT','mrt'],mo:['🚝 Mono','mo'],ktm:['🚆 KTM','ktm'],erl:['🚆 ERL','erl'],grab:['🚕 Grab','grab']};
+var TR={
+ 'Kuala Lumpur International Airport (KLIA)':[['erl','KLIA Ekspres at the terminal','']],
+ 'KLCC Sky Villa Suites The Mews':[['kj','KLCC','560 m'],['mrt','Persiaran KLCC','940 m']],
+ 'KLCC Park and Petronas Twin Towers':[['kj','KLCC','~400 m']],
+ 'Jalan Alor Food Street':[['mrt','Bukit Bintang','~450 m'],['mo','Bukit Bintang','~500 m']],
+ 'Batu Caves':[['ktm','Batu Caves','~100 m']],
+ 'Hing Kee Bakuteh':[['grab','No station within walking distance','']],
+ 'Thean Hou Temple':[['grab','No station within walking distance','']],
+ 'Pavilion Kuala Lumpur':[['mrt','Bukit Bintang','~300 m'],['mo','Bukit Bintang','~300 m']],
+ 'Bukit Bintang: KKV and Plaza Low Yat':[['mrt','Bukit Bintang','~400 m'],['mo','Bukit Bintang','~400 m']],
+ 'KL Bird Park':[['grab','No station within walking distance','']],
+ 'Masjid Jamek':[['kj','Masjid Jamek','at station'],['ag','Masjid Jamek','at station']],
+ 'Bangunan Sultan Abdul Samad':[['kj','Masjid Jamek','~400 m'],['ag','Masjid Jamek','~400 m']],
+ 'Central Market':[['kj','Pasar Seni','~150 m'],['mrt','Pasar Seni','~150 m']],
+ 'Petaling Street (Chinatown)':[['kj','Pasar Seni','~400 m'],['mrt','Pasar Seni','~400 m']],
+ 'River of Life':[['kj','Masjid Jamek','at station'],['ag','Masjid Jamek','at station']],
+ 'Le Vert Boutique Hotel':[['grab','No rail on the mountain. Grab or Genting bus','']],
+ 'Check in at Societe Suites by iHost Global':[['mrt','Sri Hartamas (per listings, confirm on Booking.com)','~1 km']],
+ 'Immersify KL (booked)':[['ag','Hang Tuah','~400 m'],['mo','Hang Tuah','~400 m']],
+ 'Wong Mei Kee':[['ag','Plaza Rakyat','~900 m']],
+ 'Berjaya Times Square':[['mo','Imbi','~250 m'],['mrt','Bukit Bintang','~600 m']],
+ 'Changkat Bukit Bintang and 2 Tengkat Tong Shin':[['mrt','Bukit Bintang','~450 m']],
+ 'Option B: KLCC Aquaria and a slow day':[['kj','KLCC','~450 m']],
+ 'TRX City Park and I\'m Donut? TRX':[['mrt','Tun Razak Exchange','~400 m']],
+ 'KLIA':[['erl','KLIA Ekspres at the terminal','']]
+};
+function trHtml(a){return '<div class=trrow>'+a.map(function(r){var k=KIND[r[0]];return `<span class=i><span class='chip ${k[1]}'>${k[0]}</span> ${esc(r[1])}${r[2]?' · 🚶 '+esc(r[2]):''}</span>`;}).join('')+'</div>';}
+try{done=JSON.parse(localStorage.getItem(DKEY)||'{}')||{};}catch(e){done={};}
+function saveDone(){try{localStorage.setItem(DKEY,JSON.stringify(done));}catch(e){}}
+function navUrl(q){return 'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+encodeURIComponent(q);}
+
+var arts={};
+DAYS.forEach(function(d){
+  var art=document.getElementById(d.id); arts[d.id]=art;
+  var lis=art.querySelectorAll('ol.tl>li:not(.leg-li)');
+  var list=d.stops.filter(function(s){return s.t;});
+  list.forEach(function(s,i){
+    var li=lis[i]; if(!li)return;
+    var key=d.id+'-'+i; li.dataset.key=key; li.dataset.q=s.q||s.name; li.dataset.name=s.name; li.dataset.t=s.t;
+    if(done[key])li.classList.add('done');
+    var pins=li.querySelector('.pins');
+    var trd=TR[s.name]; if(trd){li.querySelector('.stop p').insertAdjacentHTML('afterend',trHtml(trd));}
+    pins.insertAdjacentHTML('afterbegin',`<a class='pin go' target='_blank' rel='noopener' href='${navUrl(s.q||s.name)}'>Navigate here</a>`+((i>0&&d.id!=='d30'&&list[i-1].q&&list[i-1].q!==s.q)?`<a class='pin' target='_blank' rel='noopener' href='${dirUrl(list[i-1].q,s.q||s.name)}'>🚇 Transit from previous stop</a>`:''));
+    var b=document.createElement('button'); b.type='button'; b.className='pin dn';
+    b.textContent=done[key]?'Done':'Mark done'; b.setAttribute('aria-pressed',done[key]?'true':'false');
+    b.addEventListener('click',function(){
+      var v=!li.classList.contains('done'); li.classList.toggle('done',v);
+      if(v)done[key]=1; else delete done[key];
+      saveDone(); b.textContent=v?'Done':'Mark done'; b.setAttribute('aria-pressed',v?'true':'false'); refresh();
+    });
+    pins.appendChild(b);
+  });
+  var qs=[]; list.forEach(function(s){if(s.q&&qs.indexOf(s.q)<0&&!/^(Check out|Hotel breakfast|Breakfast|Leave )/i.test(s.name))qs.push(s.q);});
+  qs=qs.slice(0,10);
+  var act=document.createElement('div'); act.className='dayact';
+  var route=(qs.length>1&&d.id!=='d30')?`<a class='btn pri' target='_blank' rel='noopener' href='https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(qs[0])}&destination=${encodeURIComponent(qs[qs.length-1])}&waypoints=${encodeURIComponent(qs.slice(1,-1).join('|'))}'>Full-day route in Google Maps</a>`:'';
+  act.innerHTML=route+'<span class=prog></span>';
+  art.querySelector('header').after(act);
+});
+
+var bar=document.createElement('div'); bar.id='nextbar'; document.body.appendChild(bar);
+var ymd=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kuala_Lumpur'});
+var todayId=null;
+DAYS.forEach(function(d){if(ymd==='2026-12-'+(d.n<10?'0'+d.n:d.n))todayId=d.id;});
+if(todayId){var ta=arts[todayId]; ta.classList.add('today'); ta.querySelector('h3').insertAdjacentHTML('beforeend','<span class=todaytag>TODAY</span>');}
+
+function updateNext(){
+  if(!todayId){bar.style.display='none';return;}
+  var nx=arts[todayId].querySelector('ol.tl>li[data-key]:not(.done)');
+  bar.style.display='flex'; document.body.style.paddingBottom='90px';
+  if(!nx){bar.innerHTML='<div><b>All stops done for today</b></div>';return;}
+  bar.innerHTML=`<div><b>Next: ${esc(nx.dataset.name)}</b><span>${esc(nx.dataset.t)}</span></div><a target='_blank' rel='noopener' href='${navUrl(nx.dataset.q)}'>Navigate</a>`;
+}
+function refresh(){
+  DAYS.forEach(function(d){
+    var a=arts[d.id]; var all=a.querySelectorAll('ol.tl>li[data-key]').length; var n=a.querySelectorAll('ol.tl>li.done').length;
+    a.querySelector('.prog').textContent=n+' of '+all+' stops done';
+  });
+  updateNext();
+}
+
+function csvText(){
+  var rows=[['Name','Search','Day','Time','Notes']];
+  STAYS.forEach(function(s){rows.push([s.name,s.q,s.dates,'','Hotel']);});
+  DAYS.forEach(function(d){d.stops.forEach(function(s){
+    if(!s.t||/^(Check out|Hotel breakfast|Breakfast|Leave )/i.test(s.name))return;
+    rows.push([s.name,s.q,d.dow+' '+d.n+' Dec',s.t,s.note]);
+    (s.more||[]).forEach(function(m){rows.push([m.name,m.q,d.dow+' '+d.n+' Dec',s.t,'Also on this stop']);});
+  });});
+  return rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\r\n');
+}
+
+var days2go='';
+if(!todayId){
+  var p=ymd.split('-').map(Number);
+  var diff=Math.ceil((Date.UTC(2026,11,24)-Date.UTC(p[0],p[1]-1,p[2]))/864e5);
+  days2go=diff>0?diff+' days to go until you land in Kuala Lumpur.':'Trip dates have passed.';
+} else {days2go='Today is a trip day. The Next stop bar is pinned at the bottom of the screen.';}
+
+var tb=document.createElement('div'); tb.className='tools';
+tb.innerHTML=`<b>${days2go}</b><p><b>Transport on each stop:</b> 🚇 LRT or MRT, 🚝 Monorail, 🚆 KTM or KLIA Ekspres, 🚕 Grab only, 🚶 walking distance to the nearest station. A tilde means a rounded estimate, so tap Navigate for the exact route.</p><div class=bar><button class='btn pri' id=tJump type=button>Jump to today</button><button class=btn id=tShare type=button>Share</button><button class=btn id=tCopy type=button>Copy places for Google My Maps</button><button class=btn id=tReset type=button>Reset ticks</button></div><p><b>Save on your phone:</b> open this page, then use your browser menu and choose Add to Home Screen. Your ticks are saved on that device.</p><p><b>All places inside Google Maps:</b> tap Copy places for Google My Maps and paste into a new Google Sheet, then open mymaps.google.com, create a map and import that sheet. Choose the Search column to place the pins and Name for titles. The map then shows in the Google Maps app under Saved, then Maps.</p><p id=tMsg></p>`;
+document.querySelector('.hero .note').insertAdjacentElement('beforebegin',tb);
+function msg(t){document.getElementById('tMsg').textContent=t;}
+document.getElementById('tJump').addEventListener('click',function(){
+  var t=todayId?arts[todayId]:arts.d24; t.scrollIntoView({behavior:'smooth'});
+  if(!todayId)msg('Not a trip day yet, so this goes to Day 1.');
+});
+document.getElementById('tShare').addEventListener('click',function(){
+  var url=location.href;
+  if(navigator.share){navigator.share({title:'Malaysia December 2026',url:url}).catch(function(){});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){msg('Link copied.');},function(){msg('Copy the link from your browser bar.');});}
+  else msg('Copy the link from your browser bar.');
+});
+document.getElementById('tCopy').addEventListener('click',function(){
+  if(navigator.clipboard){navigator.clipboard.writeText(csvText()).then(function(){msg('Copied. Paste into cell A1 of a new Google Sheet, then import that sheet into My Maps.');},function(){msg('Copy is blocked here.');});}
+  else msg('Copy is blocked here.');
+});
+document.getElementById('tReset').addEventListener('click',function(){
+  done={}; saveDone();
+  document.querySelectorAll('li.done').forEach(function(l){l.classList.remove('done');});
+  document.querySelectorAll('.pin.dn').forEach(function(b){b.textContent='Mark done';b.setAttribute('aria-pressed','false');});
+  refresh(); msg('Ticks cleared.');
+});
+refresh();
+if(todayId){setTimeout(function(){arts[todayId].scrollIntoView({behavior:'smooth'});},400);}
+})();
+</script>
+
+</body></html>
