@@ -123,13 +123,90 @@ footer{margin-top:40px;color:var(--muted);font-size:14px;border-top:1px solid va
 @media (prefers-reduced-motion:no-preference){.pin{transition:background .15s,color .15s}}
 </style>
 
+<style>
+/* pastel theme, one colour per day. Forced light so the pastels always read well. */
+html:root,html:root:not([data-theme="light"]),html[data-theme="dark"]{
+  color-scheme:light;
+  --bg:#FBF8FD; --surface:#FFFFFF; --ink:#2B2A3A; --muted:#6B6880; --line:#E6E0EE;
+  --accent:#5B4FA0; --accent-ink:#FFFFFF; --signal:#F7D774; --warn-bg:#FFF6D9; --warn-ink:#5A4300;
+  --s1:#BFE3D4; --s2:#FAD7A5; --s3:#C9D7F5; --on-s:#2B2A3A;
+}
+body{background:var(--bg)}
+.legend{display:none!important}
+.strip a{color:#2B2A3A!important}
+.basepill{background:rgba(255,255,255,.75)!important;color:var(--ink)!important;border:1px solid rgba(43,42,58,.12)}
+.day{border-left-width:6px}
+#d24{--dc:#F9C6D9;--dd:#A83A68}
+#d25{--dc:#FFD3B0;--dd:#9C4E12}
+#d26{--dc:#FFF0A6;--dd:#7A6200}
+#d27{--dc:#BDEBCB;--dd:#2E7048}
+#d28{--dc:#B3E6EE;--dd:#1F6F82}
+#d29{--dc:#C5CBF5;--dd:#3E49A0}
+#d30{--dc:#E2C6F2;--dd:#7A3B9A}
+#d31{--dc:#F5C9BE;--dd:#9C4636}
+.day{border-left-color:var(--dd)}
+.day>header{background:var(--dc)}
+.day .dnum{color:var(--dd)}
+.day .dnum small{color:var(--dd);opacity:.85}
+.day .rail::after{border-color:var(--dd)}
+.day .tips li::before{background:var(--dd)}
+.day .pin{border-color:var(--dd);color:var(--dd)}
+.day .pin.go{background:var(--dd);color:#fff}
+.day .pin:hover{background:var(--dd);color:#fff}
+.day .btn.pri{background:var(--dd);border-color:var(--dd);color:#fff}
+.day li.done .rail::after{background:var(--dd)}
+.strip a[href="#d24"],nav a[href="#d24"]{background:#F9C6D9}
+.strip a[href="#d25"],nav a[href="#d25"]{background:#FFD3B0}
+.strip a[href="#d26"],nav a[href="#d26"]{background:#FFF0A6}
+.strip a[href="#d27"],nav a[href="#d27"]{background:#BDEBCB}
+.strip a[href="#d28"],nav a[href="#d28"]{background:#B3E6EE}
+.strip a[href="#d29"],nav a[href="#d29"]{background:#C5CBF5}
+.strip a[href="#d30"],nav a[href="#d30"]{background:#E2C6F2}
+.strip a[href="#d31"],nav a[href="#d31"]{background:#F5C9BE}
+nav a[href^="#d"]{border-color:transparent}
+</style>
+<style>
+/* Songket & Jade theme (overrides the earlier pastel block) */
+html:root,html:root:not([data-theme="light"]),html[data-theme="dark"]{color-scheme:light;--bg:#FBF6E9;--surface:#FFFDF7;--ink:#1E2A2A;--muted:#5E6A66;--line:#E6DCC0;--accent:#0F6B5B;--accent-ink:#FFFFFF;--signal:#C9A227;--warn-bg:#FFF1CC;--warn-ink:#5A4300;--s1:#0F6B5B;--s2:#C9A227;--s3:#9C3B2E;--on-s:#FFFFFF}
+body{background-color:var(--bg);background-image:url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2772%27%20height=%2772%27%3E%3Cg%20fill=%27none%27%20stroke=%27%23C9A227%27%20stroke-opacity=%27.2%27%20stroke-width=%271.2%27%3E%3Ccircle%20cx=%2718%27%20cy=%2718%27%20r=%279%27/%3E%3Ccircle%20cx=%2754%27%20cy=%2754%27%20r=%279%27/%3E%3Cpath%20d=%27M54%209l9%209-9%209-9-9zM18%2045l9%209-9%209-9-9z%27/%3E%3C/g%3E%3C/svg%3E)}
+.legend{display:none!important}
+.strip a{color:#fff!important}
+.basepill{background:rgba(255,255,255,.18)!important;color:#fff!important;border:1px solid rgba(255,255,255,.4)}
+.fact,.card,.tools{background:var(--surface)}
+.day{border-left:6px solid var(--dd);background:var(--surface)}
+#d24{--dd:#3F5F82}#d25{--dd:#9A6A0B}#d26{--dd:#9C3B2E}#d27{--dd:#2F7D5B}#d28{--dd:#1B7A7A}#d29{--dd:#B85A16}#d30{--dd:#3B4B8C}#d31{--dd:#C8102E}
+.day>header{background:var(--dd);color:#fff;position:relative;overflow:hidden;border-bottom:3px solid #C9A227}
+.day h3,.day .dnum,.day .dnum small{color:#fff}
+.day .dnum small{opacity:.85}
+.day .rail::after{border-color:var(--dd)}
+.day .tips li::before{background:#C9A227}
+.day .pin{border-color:var(--dd);color:var(--dd)}
+.day .pin.go{background:var(--dd);color:#fff}
+.day .pin:hover{background:var(--dd);color:#fff}
+.day .btn.pri{background:var(--dd);border-color:var(--dd);color:#fff}
+.day li.done .rail::after{background:var(--dd)}
+.day .stop{position:relative}
+.wm{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:104px;height:104px;color:#fff;opacity:.2;pointer-events:none}
+.swm{position:absolute;right:2px;top:8px;width:56px;height:56px;color:var(--dd);opacity:.12;pointer-events:none}
+.wm svg,.swm svg{width:100%;height:100%;display:block}
+.strip a[href="#d24"],nav a[href="#d24"]{background:#3F5F82}
+.strip a[href="#d25"],nav a[href="#d25"]{background:#9A6A0B}
+.strip a[href="#d26"],nav a[href="#d26"]{background:#9C3B2E}
+.strip a[href="#d27"],nav a[href="#d27"]{background:#2F7D5B}
+.strip a[href="#d28"],nav a[href="#d28"]{background:#1B7A7A}
+.strip a[href="#d29"],nav a[href="#d29"]{background:#B85A16}
+.strip a[href="#d30"],nav a[href="#d30"]{background:#3B4B8C}
+.strip a[href="#d31"],nav a[href="#d31"]{background:#C8102E}
+nav a[href^="#d"]{color:#fff;border-color:transparent}
+.todaytag{background:#C9A227;color:#1E2A2A}
+</style>
 <div class="wrap">
 <nav aria-label="Sections"><div class="row" id="navrow"></div></nav>
 
 <header class="hero">
   <div class="kicker">Kuala Lumpur · Genting Highlands · 24 to 31 December 2026</div>
   <h1>Malaysia, <span>eight days</span></h1>
-  <p class="lede">Two adults and an 8-year-old. Three hotels, one night up the mountain, public transport wherever it works. Every stop has a map pin, every leg says which line to ride.</p>
+  
   <div class="facts">
     <div class="fact"><b>Arrive</b><span>Thu 24 Dec, 16:15 · KLIA (via Singapore)</span></div>
     <div class="fact"><b>Depart</b><span>Thu 31 Dec, 11:05 · KLIA</span></div>
@@ -520,4 +597,55 @@ if(todayId){setTimeout(function(){arts[todayId].scrollIntoView({behavior:'smooth
 })();
 </script>
 
+<script>
+(function(){
+var T=Date.parse('2026-12-24T16:15:00+08:00'), E=Date.parse('2026-12-31T11:05:00+08:00');
+var tb=document.querySelector('.tools'); if(!tb)return;
+var old=tb.querySelector('b'); if(!old)return;
+var st=document.createElement('style');
+st.textContent=`#cdbox{text-align:center}.cdl{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.cdr{display:flex;gap:8px;justify-content:center}.cdc{flex:1;max-width:96px;background:var(--accent);color:#fff;border-radius:8px;padding:8px 4px;border-bottom:3px solid #C9A227}.cdc b{display:block;font-family:var(--f-mono);font-size:clamp(24px,7vw,38px);font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums}.cdc span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}.cdmsg{font-weight:700;font-size:18px}`;
+document.head.appendChild(st);
+var box=document.createElement('div'); box.id='cdbox'; old.replaceWith(box);
+function pad(n){return n<10?'0'+n:''+n;}
+function cell(v,l){return `<div class=cdc><b>${v}</b><span>${l}</span></div>`;}
+function tick(){
+  var now=Date.now(), d=T-now;
+  if(d<=0){box.innerHTML='<div class=cdmsg>'+(now<E?'You are in Malaysia. Enjoy the trip!':'Trip complete. Welcome home!')+'</div>';return;}
+  var s=Math.floor(d/1000), dd=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60;
+  box.innerHTML='<div class=cdl>Landing in Kuala Lumpur in</div><div class=cdr>'+cell(dd,'days')+cell(pad(h),'hours')+cell(pad(m),'min')+cell(pad(ss),'sec')+'</div>';
+}
+tick(); setInterval(tick,1000);
+})();
+(function(){
+var I={
+ tower:`<path d='M10 58V26l8-10V6m0 10l8 10v32M38 58V26l8-10V6m0 10l8 10v32M26 34h12M26 42h12'/>`,
+ tall:`<path d='M24 58V20l8-14 8 14v38M24 34h16M24 46h16'/>`,
+ steps:`<path d='M8 58V30a24 24 0 0 1 48 0v28M16 58l4-6h24l4 6M22 52l3-6h14l3 6M28 46l2-5h4l2 5'/>`,
+ clock:`<path d='M24 58V20h16v38M28 20v-6h8v6M32 14V6M10 58V38h10v20M44 58V38h10v20M10 38q5-8 10 0M44 38q5-8 10 0'/><circle cx='32' cy='30' r='4'/>`,
+ mountain:`<path d='M2 56l20-32 12 18 8-10 20 24z'/><path d='M44 12a6 6 0 0 1 12 0M40 12h18'/>`,
+ cablecar:`<path d='M4 54l20-26 12 14 10-12 14 24zM6 10l52 10M32 15v8'/><rect x='25' y='23' width='14' height='10' rx='2'/>`,
+ bowl:`<path d='M8 32c0 14 10 24 24 24s24-10 24-24zM22 8l14 22M30 6l14 24'/>`,
+ gate:`<path d='M6 58V26h14v-8h24v8h14v32M24 58V38a8 8 0 0 1 16 0v20'/>`,
+ hibiscus:`<circle cx='32' cy='16' r='11'/><circle cx='48' cy='28' r='11'/><circle cx='42' cy='46' r='11'/><circle cx='22' cy='46' r='11'/><circle cx='16' cy='28' r='11'/><path d='M32 32l10-20M32 32l8 14'/>`,
+ pagoda:`<path d='M32 4v8M12 20h40l-6-8H18zM16 36h32l-6-8H22zM10 52h44l-8-8H18zM14 52v8M50 52v8'/>`,
+ bag:`<path d='M12 22h40l4 36H8zM22 22v-4a10 10 0 0 1 20 0v4'/>`,
+ bird:`<ellipse cx='28' cy='36' rx='18' ry='12'/><circle cx='48' cy='26' r='7'/><path d='M55 26l7 3-7 2M10 32L2 24M12 40L2 44M28 48v10M22 48l-4 10'/>`,
+ ripples:`<path d='M4 22q7-6 14 0t14 0 14 0 14 0M4 34q7-6 14 0t14 0 14 0 14 0M4 46q7-6 14 0t14 0 14 0 14 0'/>`,
+ lantern:`<path d='M32 4v6M24 10h16M24 48h16M28 48v10M36 48v10'/><ellipse cx='32' cy='30' rx='16' ry='18'/>`,
+ snow:`<path d='M32 4v56M8 18l48 28M8 46l48-28M26 8l6 6 6-6M26 56l6-6 6 6'/>`,
+ ferris:`<circle cx='32' cy='28' r='22'/><circle cx='32' cy='28' r='3'/><path d='M32 6v44M10 28h44M16 12l32 32M16 44l32-32M20 60l12-32 12 32'/>`,
+ rays:`<circle cx='32' cy='32' r='12'/><path d='M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M12 52l6-6M46 18l6-6'/>`,
+ slide:`<path d='M8 10v48M8 14h14l22 36h14M8 58h48'/>`,
+ shops:`<path d='M4 58V26h18v32M22 58V18h20v40M42 58V28h18v30M8 34h10M8 44h10M26 26h12M26 36h12M26 46h12M46 36h10M46 46h10'/>`,
+ fish:`<path d='M6 32c10-16 26-16 38 0-12 16-28 16-38 0zM44 32l14-12v24z'/><circle cx='18' cy='29' r='2'/>`,
+ plane:`<path d='M8 34l48-6-8 8 8 6-12-2-8 12-4-12-24-6z'/>`,
+ pot:`<path d='M10 28h44l-4 24a8 8 0 0 1-8 6H22a8 8 0 0 1-8-6zM6 28h52M20 18c0-6 6-6 6-12M34 18c0-6 6-6 6-12'/>`
+};
+function svg(k){return `<svg viewBox='0 0 64 64' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'>${I[k]}</svg>`;}
+var HD={d24:'tower',d25:'steps',d26:'clock',d27:'mountain',d28:'cablecar',d29:'bowl',d30:'gate',d31:'hibiscus'};
+Object.keys(HD).forEach(function(id){var h=document.querySelector('#'+id+'>header'); if(h)h.insertAdjacentHTML('beforeend','<span class=wm>'+svg(HD[id])+'</span>');});
+var SM=[[/^KLCC Park/,'tower'],[/^Jalan Alor/,'bowl'],[/^Batu Caves/,'steps'],[/^Hing Kee/,'bowl'],[/^Thean Hou/,'pagoda'],[/^Pavilion/,'bag'],[/^Bukit Bintang: KKV/,'bag'],[/^KL Bird Park/,'bird'],[/^Masjid Jamek/,'ripples'],[/^River of Life/,'ripples'],[/^Bangunan Sultan/,'clock'],[/^Central Market/,'lantern'],[/^Petaling Street/,'lantern'],[/^Nam Heong/,'bowl'],[/^Ninso/,'bag'],[/^Chin Swee/,'pagoda'],[/^First World Plaza/,'snow'],[/^Genting SkyWorlds/,'ferris'],[/^Genting Skytropolis/,'ferris'],[/^Your booked skyway/,'cablecar'],[/^Immersify/,'rays'],[/^Wong Mei Kee/,'bowl'],[/^Berjaya Times Square/,'slide'],[/^Changkat/,'shops'],[/^Lai Foong/,'bowl'],[/^Option A/,'gate'],[/^Option B/,'fish'],[/^EPL Cafe/,'pot'],[/^SuperPark/,'slide'],[/^TRX City Park/,'tall'],[/^KLIA$/,'plane'],[/^Kuala Lumpur International Airport/,'plane']];
+document.querySelectorAll('.day .stop').forEach(function(st){var h=st.querySelector('h4'); var n=h?h.textContent:''; for(var i=0;i<SM.length;i++){if(SM[i][0].test(n)){st.insertAdjacentHTML('afterbegin','<span class=swm>'+svg(SM[i][1])+'</span>');break;}}});
+})();
+</script>
 </body></html>
