@@ -1,0 +1,1027 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Malaysia December 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a rail-timetable. Day cards read as departure boards, stops hang off a vertical line, legs between stops show which line to ride. */
+:root{
+  --bg:#F1F4F1; --surface:#FFFFFF; --ink:#10231F; --muted:#56665F; --line:#D3DAD5;
+  --accent:#0B6B57; --accent-ink:#FFFFFF; --signal:#E3B000; --warn-bg:#FFF4D6; --warn-ink:#5A4300;
+  --s1:#0B6B57; --s2:#B07A00; --s3:#3A5A8C; --on-s:#FFFFFF;
+  --kj:#C2185B; --ktm:#C62828; --erl:#37474F; --brt:#1565C0; --mono:#2E7D32; --bus:#6A4C93; --grab:#00875A; --walk:#6B7C75;
+  --f-display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1816; --surface:#14241F; --ink:#E8F0EC; --muted:#9DB0A8; --line:#274038;
+  --accent:#4FC3A1; --accent-ink:#06201A; --signal:#F2C531; --warn-bg:#3A2F0B; --warn-ink:#F4DFA0;
+  --s1:#1E8F76; --s2:#C9962A; --s3:#5C80B8; --on-s:#FFFFFF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1816; --surface:#14241F; --ink:#E8F0EC; --muted:#9DB0A8; --line:#274038;
+  --accent:#4FC3A1; --accent-ink:#06201A; --signal:#F2C531; --warn-bg:#3A2F0B; --warn-ink:#F4DFA0;
+  --s1:#1E8F76; --s2:#C9962A; --s3:#5C80B8; --on-s:#FFFFFF; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.08}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px))}
+nav .row{max-width:1040px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap}
+nav a.d{font-family:var(--f-mono);font-weight:500}
+nav a:hover{border-color:var(--accent);color:var(--accent)}
+nav .sep{flex:none;width:1px;background:var(--line);margin:2px 4px}
+
+/* hero */
+header.hero{padding:36px 0 24px;display:grid;gap:22px}
+.kicker{font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(40px,8vw,84px);font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.lede{max-width:62ch;color:var(--muted);font-size:18px;margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.fact b{display:block;font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fact span{font-weight:600}
+.strip{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px}
+.strip a{display:block;text-decoration:none;color:var(--on-s);padding:8px 6px;border-radius:4px;min-width:0}
+.strip a b{display:block;font-family:var(--f-mono);font-weight:500;font-size:13px}
+.strip a small{display:block;font-size:11px;line-height:1.25;opacity:.95;overflow-wrap:anywhere}
+.s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s0{background:var(--ink);color:var(--bg)!important}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.note{background:var(--warn-bg);color:var(--warn-ink);border-radius:6px;padding:12px 14px;font-size:15px}
+
+/* days */
+section{padding-top:36px}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-h h2{font-size:clamp(26px,4vw,36px);font-weight:700}
+.sec-h p{margin:0;color:var(--muted)}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-bottom:22px;overflow:hidden;scroll-margin-top:70px}
+.day>header{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dnum{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:.9;grid-row:span 2}
+.dnum small{display:block;font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.day h3{font-size:clamp(22px,3.2vw,28px);font-weight:700}
+.basepill{justify-self:start;font-size:13px;font-weight:600;color:var(--on-s);padding:3px 10px;border-radius:999px}
+.tl{list-style:none;margin:0;padding:6px 18px 10px}
+.tl>li{display:grid;grid-template-columns:62px 18px minmax(0,1fr);gap:0 10px}
+.tm{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:14px;text-align:right;font-variant-numeric:tabular-nums}
+.rail{position:relative}
+.rail::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
+.rail::after{content:"";position:absolute;left:3px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+li.leg-li .rail::after{display:none}
+li.leg-li .tm{padding-top:2px}
+.stop{padding:10px 0 12px;min-width:0}
+.stop h4{margin:0;font-size:18px;font-weight:600;font-family:var(--f-body)}
+.stop p{margin:3px 0 0;color:var(--muted);font-size:15px}
+.pins{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pin{font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--accent);color:var(--accent);padding:3px 10px;border-radius:999px}
+.pin:hover{background:var(--accent);color:var(--accent-ink)}
+.leg{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:4px 0 6px;font-size:14px;color:var(--muted);min-width:0}
+.leg .t{min-width:0;flex:1 1 220px}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-family:var(--f-mono);font-size:11.5px;font-weight:500;color:#fff;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.kj{background:var(--kj)}.ktm{background:var(--ktm)}.erl{background:var(--erl)}.brt{background:var(--brt)}.mono-l{background:var(--mono)}.bus{background:var(--bus)}.grab{background:var(--grab)}.walk{background:var(--walk)}
+.leg a{font-size:13px;font-weight:600}
+.tips{border-top:1px dashed var(--line);margin:0;padding:12px 18px 16px;list-style:none;display:grid;gap:6px;font-size:15px}
+.tips li{padding-left:16px;position:relative}
+.tips li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;background:var(--signal);border-radius:1px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.card h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.card p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.card .meta{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-top:8px}
+.stay-top{height:6px;border-radius:3px;margin-bottom:12px}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:1px 6px;margin-right:4px;color:var(--muted)}
+.tag.warn{background:var(--warn-bg);color:var(--warn-ink);border-color:transparent}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 12px;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
+.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+footer{margin-top:40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:560px){
+  .tl>li{grid-template-columns:48px 16px minmax(0,1fr)}
+  .tl{padding-inline:12px}
+  .dnum{font-size:44px}
+  .strip a small{font-size:10.5px}
+  .day>header{padding:14px 12px}
+}
+@media (prefers-reduced-motion:no-preference){.pin{transition:background .15s,color .15s}}
+</style>
+
+<style>
+/* pastel theme, one colour per day. Forced light so the pastels always read well. */
+html:root,html:root:not([data-theme="light"]),html[data-theme="dark"]{
+  color-scheme:light;
+  --bg:#FBF8FD; --surface:#FFFFFF; --ink:#2B2A3A; --muted:#6B6880; --line:#E6E0EE;
+  --accent:#5B4FA0; --accent-ink:#FFFFFF; --signal:#F7D774; --warn-bg:#FFF6D9; --warn-ink:#5A4300;
+  --s1:#BFE3D4; --s2:#FAD7A5; --s3:#C9D7F5; --on-s:#2B2A3A;
+}
+body{background:var(--bg)}
+.legend{display:none!important}
+.strip a{color:#2B2A3A!important}
+.basepill{background:rgba(255,255,255,.75)!important;color:var(--ink)!important;border:1px solid rgba(43,42,58,.12)}
+.day{border-left-width:6px}
+#d24{--dc:#F9C6D9;--dd:#A83A68}
+#d25{--dc:#FFD3B0;--dd:#9C4E12}
+#d26{--dc:#FFF0A6;--dd:#7A6200}
+#d27{--dc:#BDEBCB;--dd:#2E7048}
+#d28{--dc:#B3E6EE;--dd:#1F6F82}
+#d29{--dc:#C5CBF5;--dd:#3E49A0}
+#d30{--dc:#E2C6F2;--dd:#7A3B9A}
+#d31{--dc:#F5C9BE;--dd:#9C4636}
+.day{border-left-color:var(--dd)}
+.day>header{background:var(--dc)}
+.day .dnum{color:var(--dd)}
+.day .dnum small{color:var(--dd);opacity:.85}
+.day .rail::after{border-color:var(--dd)}
+.day .tips li::before{background:var(--dd)}
+.day .pin{border-color:var(--dd);color:var(--dd)}
+.day .pin.go{background:var(--dd);color:#fff}
+.day .pin:hover{background:var(--dd);color:#fff}
+.day .btn.pri{background:var(--dd);border-color:var(--dd);color:#fff}
+.day li.done .rail::after{background:var(--dd)}
+.strip a[href="#d24"],nav a[href="#d24"]{background:#F9C6D9}
+.strip a[href="#d25"],nav a[href="#d25"]{background:#FFD3B0}
+.strip a[href="#d26"],nav a[href="#d26"]{background:#FFF0A6}
+.strip a[href="#d27"],nav a[href="#d27"]{background:#BDEBCB}
+.strip a[href="#d28"],nav a[href="#d28"]{background:#B3E6EE}
+.strip a[href="#d29"],nav a[href="#d29"]{background:#C5CBF5}
+.strip a[href="#d30"],nav a[href="#d30"]{background:#E2C6F2}
+.strip a[href="#d31"],nav a[href="#d31"]{background:#F5C9BE}
+nav a[href^="#d"]{border-color:transparent}
+</style>
+<style>
+/* Songket & Jade theme (overrides the earlier pastel block) */
+html:root,html:root:not([data-theme="light"]),html[data-theme="dark"]{color-scheme:light;--bg:#FBF6E9;--surface:#FFFDF7;--ink:#1E2A2A;--muted:#5E6A66;--line:#E6DCC0;--accent:#0F6B5B;--accent-ink:#FFFFFF;--signal:#C9A227;--warn-bg:#FFF1CC;--warn-ink:#5A4300;--s1:#0F6B5B;--s2:#C9A227;--s3:#9C3B2E;--on-s:#FFFFFF}
+body{background-color:var(--bg);background-image:url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2772%27%20height=%2772%27%3E%3Cg%20fill=%27none%27%20stroke=%27%23C9A227%27%20stroke-opacity=%27.2%27%20stroke-width=%271.2%27%3E%3Ccircle%20cx=%2718%27%20cy=%2718%27%20r=%279%27/%3E%3Ccircle%20cx=%2754%27%20cy=%2754%27%20r=%279%27/%3E%3Cpath%20d=%27M54%209l9%209-9%209-9-9zM18%2045l9%209-9%209-9-9z%27/%3E%3C/g%3E%3C/svg%3E)}
+.legend{display:none!important}
+.strip a{color:#fff!important}
+.basepill{background:rgba(255,255,255,.18)!important;color:#fff!important;border:1px solid rgba(255,255,255,.4)}
+.fact,.card,.tools{background:var(--surface)}
+.day{border-left:6px solid var(--dd);background:var(--surface)}
+#d24{--dd:#3F5F82}#d25{--dd:#9A6A0B}#d26{--dd:#9C3B2E}#d27{--dd:#2F7D5B}#d28{--dd:#1B7A7A}#d29{--dd:#B85A16}#d30{--dd:#3B4B8C}#d31{--dd:#C8102E}
+.day>header{background:var(--dd);color:#fff;position:relative;overflow:hidden;border-bottom:3px solid #C9A227}
+.day h3,.day .dnum,.day .dnum small{color:#fff}
+.day .dnum small{opacity:.85}
+.day .rail::after{border-color:var(--dd)}
+.day .tips li::before{background:#C9A227}
+.day .pin{border-color:var(--dd);color:var(--dd)}
+.day .pin.go{background:var(--dd);color:#fff}
+.day .pin:hover{background:var(--dd);color:#fff}
+.day .btn.pri{background:var(--dd);border-color:var(--dd);color:#fff}
+.day li.done .rail::after{background:var(--dd)}
+.day .stop{position:relative}
+.wm{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:104px;height:104px;color:#fff;opacity:.2;pointer-events:none}
+.swm{position:absolute;right:2px;top:8px;width:56px;height:56px;color:var(--dd);opacity:.12;pointer-events:none}
+.wm svg,.swm svg{width:100%;height:100%;display:block}
+.strip a[href="#d24"],nav a[href="#d24"]{background:#3F5F82}
+.strip a[href="#d25"],nav a[href="#d25"]{background:#9A6A0B}
+.strip a[href="#d26"],nav a[href="#d26"]{background:#9C3B2E}
+.strip a[href="#d27"],nav a[href="#d27"]{background:#2F7D5B}
+.strip a[href="#d28"],nav a[href="#d28"]{background:#1B7A7A}
+.strip a[href="#d29"],nav a[href="#d29"]{background:#B85A16}
+.strip a[href="#d30"],nav a[href="#d30"]{background:#3B4B8C}
+.strip a[href="#d31"],nav a[href="#d31"]{background:#C8102E}
+nav a[href^="#d"]{color:#fff;border-color:transparent}
+.todaytag{background:#C9A227;color:#1E2A2A}
+</style>
+<div class="wrap">
+<nav aria-label="Sections"><div class="row" id="navrow"></div></nav>
+
+<header class="hero">
+  <div class="kicker">Kuala Lumpur · Genting Highlands · 24 to 31 December 2026</div>
+  <h1>Malaysia, <span>eight days</span></h1>
+  
+  <div class="facts">
+    <div class="fact"><b>Arrive</b><span>Thu 24 Dec, 16:15 · KLIA (via Singapore)</span></div>
+    <div class="fact"><b>Depart</b><span>Thu 31 Dec, 11:05 · KLIA</span></div>
+    <div class="fact"><b>Genting</b><span>Sun 27 to Mon 28 Dec</span></div>
+    <div class="fact"><b>Pay and ride</b><span>Touch 'n Go eWallet · MyRapid PULSE</span></div>
+  </div>
+  <div>
+    <div class="strip" id="strip" role="list" aria-label="Where you sleep each night"></div>
+    <div class="legend" style="margin-top:10px"><span><i class="s1"></i>KLCC Sky Villa Suites The Mews</span><span><i class="s2"></i>Le Vert Boutique Hotel</span><span><i class="s3"></i>Societe Suites by iHost Global</span></div>
+  </div>
+  <div class="note"><b>Check before you go.</b> Opening hours, ticket prices and which cable car is running come from listings found on 28 Oct 2026. Treat them as a guide and confirm on the official sites linked below. Pictures are not embedded here, so use the pin buttons to see each place on Google Maps.</div>
+</header>
+
+<section id="days-sec" style="padding-top:8px">
+  <div class="sec-h"><h2>Day by day</h2><p>Tap a pin to open Google Maps. Tap "Transit route" for live directions from where you are.</p></div>
+  <div id="days"></div>
+  <div class="card" style="margin-bottom:8px">
+    <h3>Not scheduled: Jonker Street</h3>
+    <p>Your list had Jonker Street under Kuala Lumpur, but the famous Jonker Street night market is in Melaka, roughly two hours each way. It needs a full day, so use the free day on Wed 30 Dec. The night market itself runs on weekend evenings.</p>
+    <div class="pins"><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jonker%20Street%20Melaka">Pin: Jonker Street, Melaka</a></div>
+  </div>
+</section>
+
+<section id="stays">
+  <div class="sec-h"><h2>Where you sleep</h2><p>All three confirmed on Booking.com.</p></div>
+  <div class="grid" id="staygrid"></div>
+</section>
+
+<section id="food">
+  <div class="sec-h"><h2>Michelin Bib Gourmand list</h2><p>Six places, each placed on a day.</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Eatery</th><th>Known for</th><th>Where</th><th>Planned</th><th>Pin</th></tr></thead>
+    <tbody id="foodbody"></tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:14px;margin-top:10px">Also on the plan: Jalan Alor Food Street (Thu 24 Dec). Wikipedia's 2026 column marks Heun Kee as closed while Michelin's 2026 list still names it, so check it is open before you walk over. Lai Foong is also spelled Lai Fong in Michelin's own pages.</p>
+</section>
+
+<section id="shop">
+  <div class="sec-h"><h2>Shopping</h2><p>Cheap first, then the polished malls.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Cheap and bulk</h3><p>Petaling Street (Sat 26), Plaza GM, Mydin, Ecoplus and Haniffa Department Store (Tue 29). Open each saved pin and group them by distance, then take one Grab between clusters.</p>
+      <div class="pins" id="pins-cheap"></div></div>
+    <div class="card"><h3>Higher end</h3><p>Pavilion Kuala Lumpur on Christmas evening (Fri 25) and Berjaya Times Square on Tue 29. Genting Highlands Premium Outlets sits at the Awana cable car station on Mon 28.</p>
+      <div class="pins" id="pins-fancy"></div></div>
+  </div>
+</section>
+
+<section id="move">
+  <div class="sec-h"><h2>Getting around</h2><p>Public transport first, Grab for the awkward legs.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Apps to set up now</h3>
+      <p><b>Touch 'n Go eWallet</b> pays for trains, buses and most shops. Check what verification a foreign passport needs and set it up before you fly.</p>
+      <p><b>MyRapid PULSE</b> and <b>Moovit</b> show Rapid KL bus and rail times. <b>Grab</b> covers taxis.</p>
+      <div class="pins"><a class="pin" target="_blank" rel="noopener" href="https://myrapid.com.my">MyRapid</a><a class="pin" target="_blank" rel="noopener" href="https://www.kliaekspres.com">KLIA Ekspres</a><a class="pin" target="_blank" rel="noopener" href="https://www.ktmb.com.my">KTMB Komuter</a></div></div>
+    <div class="card"><h3>Lines you will use</h3>
+      <p><span class="chip kj">LRT Kelana Jaya</span> runs KLCC, Pasar Seni, KL Sentral, Masjid Jamek and ends at Gombak. It is your spine.</p>
+      <p><span class="chip erl">KLIA Ekspres</span> airport to KL Sentral in about 30 minutes.</p>
+      <p><span class="chip ktm">KTM Komuter</span> KL Sentral to Batu Caves and to Setia Jaya for Sunway.</p>
+      <p><span class="chip brt">BRT Sunway</span> Setia Jaya or USJ 7 to Sunway Lagoon.</p></div>
+    <div class="card"><h3>Genting: which cable car?</h3>
+      <p>Buses from Kuala Lumpur go to either the Awana terminal (Awana SkyWay) or the Gohtong Jaya complex (Genting SkyWay), depending on which one is running that day. You go up by Grab on 27 Dec, so this matters for 28 Dec. Read your skyway booking to see which one it names.</p>
+      <div class="pins"><a class="pin" target="_blank" rel="noopener" href="https://www.gentingskyworlds.com">Genting SkyWorlds</a><a class="pin" target="_blank" rel="noopener" href="https://easybook.com">Easybook buses</a></div></div>
+  </div>
+</section>
+
+<section id="list">
+  <div class="sec-h"><h2>Before you fly</h2><p>Ticks stay on this device.</p></div>
+  <ul class="check" id="checklist"></ul>
+</section>
+
+<footer>Built 28 Oct 2026 from your itinerary notes. Dates fall on Thu 24 Dec to Thu 31 Dec 2026. Fares, hours and ticket prices change, so confirm each on the official site.</footer>
+</div>
+
+<script>
+(function(){
+var MAP="https://www.google.com/maps/search/?api=1&query=";
+function pinUrl(q){return MAP+encodeURIComponent(q);}
+function dirUrl(a,b){return "https://www.google.com/maps/dir/?api=1&travelmode=transit&origin="+encodeURIComponent(a)+"&destination="+encodeURIComponent(b);}
+var LINES={kj:["LRT Kelana Jaya","kj"],ktm:["KTM Komuter","ktm"],erl:["KLIA Ekspres","erl"],brt:["BRT Sunway","brt"],bus:["Bus","bus"],grab:["Grab or taxi","grab"],walk:["Walk","walk"],mono:["Monorail","mono-l"]};
+var ASTERN="KLCC Sky Villa Suites The Mews", LEVERT="Le Vert Boutique Hotel", SOC="Societe Suites by iHost Global";
+
+var DAYS=[
+{id:"d24",n:24,dow:"Thu",stay:1,title:"Land, check in, KLCC and street food",stops:[
+ {t:"16:15",name:"Kuala Lumpur International Airport (KLIA)",q:"KLIA Terminal 1 Sepang",note:"Your flight from Singapore lands. Allow 60 to 90 minutes for immigration and bags."},
+ {leg:{lines:["erl","kj"],text:"KLIA Ekspres to KL Sentral (about 30 min), then LRT Kelana Jaya line to KLCC (about 15 min). The hotel is about an 8 minute walk from KLCC station, or a short Grab with bags.",dir:["KLIA Terminal 1","KLCC Kuala Lumpur"]}},
+ {t:"18:30",name:ASTERN,q:"The Mews Jalan Yap Kwan Seng Kuala Lumpur",note:"Check in and drop bags. The Mews is on Jalan Yap Kwan Seng, an easy walk from KLCC. Confirm the exact tower and address on your Booking.com page."},
+ {t:"19:30",name:"KLCC Park and Petronas Twin Towers",q:"KLCC Park Kuala Lumpur",note:"An easy first evening. The towers are lit at night and the park has a playground for your 8-year-old."},
+ {leg:{lines:["walk","grab"],text:"About 20 minutes on foot toward Bukit Bintang, or a short Grab."}},
+ {t:"20:30",name:"Jalan Alor Food Street",q:"Jalan Alor Food Street Kuala Lumpur",note:"Share a few dishes between three. It is busy and loud after dark."}
+],tips:["The towers and the park are about 10 minutes on foot from your hotel, so you can come back any evening.","Buy a local eSIM or confirm roaming before landing so Grab works straight away."]},
+
+{id:"d25",n:25,dow:"Fri",stay:1,title:"Batu Caves, bak kut teh, Thean Hou, Christmas lights",stops:[
+ {t:"08:30",name:"Batu Caves",q:"Batu Caves Temple Gombak",note:"272 steps to the main cave. Go early before the heat and the crowds. Keep snacks in a bag because the macaques grab food. Cover shoulders and knees.",leg:{lines:["kj","ktm"],text:"LRT Kelana Jaya line from KLCC to KL Sentral, then KTM Komuter to Batu Caves, the end of the line (about 30 min).",dir:["KLCC Kuala Lumpur","Batu Caves KTM Station"]}},
+ {leg:{lines:["grab"],text:"Grab to Kepong, about 20 to 30 minutes. There is no direct train."}},
+ {t:"12:30",name:"Hing Kee Bakuteh",q:"Hing Kee Bakuteh 121 Jalan Kepong Taman Usahawan Kuala Lumpur",note:"Michelin Bib Gourmand bak kut teh, 121 Jalan Kepong. Check opening hours first, it is a local favourite and fills up."},
+ {leg:{lines:["grab"],text:"Grab to Seputeh, about 30 to 40 minutes in traffic."}},
+ {t:"15:00",name:"Thean Hou Temple",q:"Thean Hou Temple Kuala Lumpur",note:"A six-tiered Chinese temple on a hill with city views. Good photos, easy walking."},
+ {leg:{lines:["grab","mono"],text:"Grab to Bukit Bintang, or Grab to a Monorail station then Monorail."}},
+ {t:"18:30",name:"Pavilion Kuala Lumpur",q:"Pavilion Kuala Lumpur Bukit Bintang",note:"Higher-end mall, usually decorated for Christmas in late December. Dinner here or nearby. Mon Chinese Roti @ Pavilion KL is a bakery in the mall (listed RM 1 to 20, 4.4 on Google) for a snack.",more:[{name:"Mon Chinese Roti @ Pavilion KL",q:"Mon Chinese Roti Pavilion KL"}]},
+ {leg:{lines:["walk"],text:"Short walk along Jalan Bukit Bintang."}},
+ {t:"20:00",name:"Bukit Bintang: KKV and Plaza Low Yat",q:"Bukit Bintang Kuala Lumpur",note:"KKV Bukit Bintang is a variety store and Plaza Low Yat is a big electronics mall. The strip is busy on Christmas night, so keep your child close.",more:[{name:"KKV Bukit Bintang",q:"KKV Bukit Bintang Kuala Lumpur"},{name:"Plaza Low Yat",q:"Plaza Low Yat Kuala Lumpur"}]}
+],tips:["This is the longest day on foot. If your 8-year-old tires, drop Thean Hou and go straight to Pavilion.","Christmas Day: some small eateries may be closed. Hing Kee is worth a quick check."]},
+
+{id:"d26",n:26,dow:"Sat",stay:1,title:"Bird Park to Chinatown",stops:[
+ {t:"09:00",name:"KL Bird Park",q:"KL Bird Park Jalan Cenderawasih Kuala Lumpur",note:"A walk-through aviary in the Lake Gardens. Birds are most active in the morning and it is shaded.",leg:{lines:["grab"],text:"Grab from the hotel, about 20 minutes. Return by Grab as well."}},
+ {t:"12:30",name:"Masjid Jamek",q:"Masjid Jamek Kuala Lumpur",note:"Where the Klang and Gombak rivers meet. You come back at 9 pm tonight for River of Life, when the fountains and lights are on.",leg:{lines:["grab","kj"],text:"Grab to Masjid Jamek LRT station, or LRT Kelana Jaya line via KL Sentral."}},
+ {t:"13:30",name:"Bangunan Sultan Abdul Samad",q:"Sultan Abdul Samad Building Kuala Lumpur",note:"Colonial-era building facing Merdeka Square. A photo stop, no need to go in.",leg:{lines:["walk"],text:"About 5 minutes on foot."}},
+ {t:"15:00",name:"Central Market",q:"Central Market Kuala Lumpur Pasar Seni",note:"Crafts and batik, air-conditioned. Cooler than the street in the afternoon.",leg:{lines:["kj"],text:"Masjid Jamek to Pasar Seni on the LRT, one stop, or walk 15 minutes."}},
+ {t:"16:30",name:"Petaling Street (Chinatown)",q:"Petaling Street Chinatown Kuala Lumpur",note:"Cheap shopping. Bargain politely and start at about half the first price.",leg:{lines:["walk"],text:"5 minutes on foot from Central Market."}},
+ {t:"19:00",name:"Nam Heong Chicken Rice",q:"Nam Heong Chicken Rice Kuala Lumpur city centre",note:"Michelin Bib Gourmand Hainanese chicken rice, listed under City Centre. Pick this or its neighbour.",more:[{name:"Sin Kiew Yee Shin Kee Beef Noodles",q:"Sin Kiew Yee Shin Kee Beef Noodles Kuala Lumpur"}]},
+ {leg:{lines:["grab","kj"],text:"Short Grab, or LRT Kelana Jaya line to Masjid Jamek."}},
+ {t:"21:00",name:"River of Life",q:"River of Life Kuala Lumpur",note:"Your 9 pm stop. The confluence is lit up and the fountains run in the evening. Take the LRT Kelana Jaya line straight back to KLCC afterwards."}
+],tips:["Saturday means crowds in Chinatown. Do Central Market first, then Petaling Street, and eat before the evening crush.","Jonker Street is in Melaka, not here. See the note below the days."]},
+
+{id:"d27",n:27,dow:"Sun",stay:2,title:"KL to Genting Highlands",stops:[
+ {t:"09:00",name:"Check out of "+ASTERN,q:"The Mews Jalan Yap Kwan Seng Kuala Lumpur",note:"Take all bags. You do not return to this hotel."},
+ {leg:{lines:["grab"],text:"Grab from KLCC up to Genting, about 1 to 1.5 hours in total. Choose Grab XL if your bags need it, set the drop-off to your hotel, and leave by 09:30 to 10:00 to beat the Sunday crowd. Check the fare in the app."}},
+ {t:"10:15",name:"Ninso Gombak",q:"Ninso Gombak",note:"A quick stop from your saved list, near the road toward Genting. Ask your driver to stop, or skip it if Sunday traffic is heavy."},
+ {t:"12:00",name:LEVERT,q:"Le Vert Boutique Hotel Genting Highlands",note:"Arrive by Grab with all your bags. Confirm the address on your Booking.com page. If check-in is not open yet, leave bags with the desk."},
+ {t:"15:30",name:"First World Plaza, Ripley's Adventureland, Genting Snow World",q:"First World Plaza Genting Highlands",note:"Indoor attractions that suit a crowded Sunday. Save the outdoor theme park for Monday.",more:[{name:"Ripley's Adventureland",q:"Ripley's Adventureland Genting Highlands"},{name:"Genting Snow World",q:"Genting Snow World Genting Highlands"}]},
+ {t:"17:30",name:"Chin Swee Caves Temple",q:"Chin Swee Caves Temple Genting Highlands",note:"A temple with a pagoda and views, cooler up here. Check closing time and go before dusk.",leg:{lines:["grab"],text:"Taxi or resort shuttle from the main resort area."}},
+ {t:"19:00",name:"Dinner at SkyAvenue or First World Plaza",q:"SkyAvenue Genting Highlands",note:"Plenty of food courts and restaurants at the resort."}
+],tips:["Sunday is a peak day at Genting, so leave KL early and keep the day to indoor stops.","It is much cooler on the mountain. Pack a light jacket for the evening.","With a Grab you can bring all your bags. Ask Le Vert to hold them if you arrive before check-in."]},
+
+{id:"d28",n:28,dow:"Mon",stay:3,title:"SkyWorlds, the booked skyway, back to KL",stops:[
+ {t:"08:30",name:"Breakfast and check out",q:"Le Vert Boutique Hotel Genting Highlands",note:"Check out and take bags with you or to the cable car station."},
+ {t:"10:00",name:"Genting SkyWorlds (booked)",q:"Genting SkyWorlds Theme Park",note:"Outdoor park, opens 10:00 and closes 18:00 on listed hours. A weekday should be lighter than Sunday. Tickets are priced by height, and a child above 110 cm needs an adult ticket, which an 8-year-old often is. Use the free virtual queue reservations in the app."},
+ {t:"14:00",name:"Genting Skytropolis (indoor)",q:"Genting Skytropolis Indoor Theme Park",note:"Open from 11:00 on listed hours. A good fallback in rain, or choose one park only if energy is low."},
+ {t:"16:00",name:"Your booked skyway down",q:"Awana SkyWay Genting Highlands",note:"Your 28 Dec booking is described as the skyway. Check whether it is Awana or Genting SkyWay and which station it uses, then plan your exit around its time."},
+ {t:"16:45",name:"Genting Highlands Premium Outlets",q:"Genting Highlands Premium Outlets",note:"Outlet shopping at the Awana station. Quick browse before the bus."},
+ {t:"18:00",name:"Bus to KL Sentral",q:"Awana Transport Hub Genting Highlands",note:"Express buses run back to Kuala Lumpur, about 1 to 1.5 hours.",leg:{lines:["bus"],text:"Bus from the Awana terminal, or from Gohtong Jaya if that is the cable car in use. With heavy bags, a Grab from the hotel straight to Societe Suites is simpler."}},
+ {t:"20:00",name:"Check in at "+SOC,q:"Societe Suites by iHost Global Kuala Lumpur",note:"Open your Booking.com confirmation for the exact address and nearest station.",leg:{lines:["kj","grab"],text:"From KL Sentral, Grab is the simplest with bags."}}
+],tips:["Skytropolis hours quoted: 11:00 to 21:00 Mon to Fri and Sun, 11:00 to 22:00 Sat. SkyWorlds: 10:00 to 18:00, closed Tuesdays except public and school holidays.","Ticket prices seen online: SkyWorlds about RM 168 online for non-Malaysians, Skytropolis about RM 84 unlimited. Confirm on the official site."]},
+
+{id:"d29",n:29,dow:"Tue",stay:3,title:"Immersify, Pudu food run and shopping",stops:[
+ {t:"08:45",name:"Hotel breakfast",q:"Societe Suites by iHost Global Kuala Lumpur",note:"Slow morning after a long Monday."},
+ {t:"10:00",name:"Immersify KL (booked)",q:"Immersify KL The Labs BBCC 2 Jalan Hang Tuah Kuala Lumpur",note:"Your timed entry, the first slot of the day. Plan about 2 hours. Have your voucher and confirmation open on your phone before you arrive.",leg:{lines:["grab"],text:"Grab to BBCC on Jalan Hang Tuah."}},
+ {t:"12:15",name:"Wong Mei Kee",q:"Wong Mei Kee 30 Jalan Nyonya Pudu Kuala Lumpur",note:"Michelin Bib Gourmand. Famous for crackling roast pork (siew yoke). Roast meats can sell out, so come straight after Immersify. 30 Jalan Nyonya, off Jalan Pudu. Kedai Kopi Pudu 168 Pan Mee is a hawker stall nearby, saved for its claypot chicken rice, if you want a second plate.",more:[{name:"Kedai Kopi Pudu 168",q:"Kedai Kopi Pudu 168 Pan Mee Kuala Lumpur"}],leg:{lines:["grab"],text:"Grab to Pudu."}},
+ {t:"14:00",name:"Berjaya Times Square",q:"Berjaya Times Square Kuala Lumpur",note:"Large mall with an indoor theme park for your 8-year-old. Jungle Gym Berjaya Times Square is the indoor playground there, rated 4.5 on Google.",more:[{name:"Jungle Gym Berjaya Times Square",q:"Jungle Gym Berjaya Times Square Kuala Lumpur"}],leg:{lines:["grab","mono"],text:"Short Grab or Monorail toward Imbi."}},
+ {t:"15:30",name:"Cheap shopping run",q:"Plaza GM Kuala Lumpur",note:"Plaza GM, Mydin, Ecoplus and Haniffa Department Store. Open each pin and visit the ones closest together. Take one Grab between clusters.",more:[{name:"Mydin",q:"Mydin Kuala Lumpur"},{name:"Ecoplus",q:"Ecoplus Kuala Lumpur"},{name:"Haniffa Department Store",q:"Haniffa Department Store Kuala Lumpur"}]},
+ {t:"17:30",name:"Changkat Bukit Bintang and 2 Tengkat Tong Shin",q:"Changkat Bukit Bintang Kuala Lumpur",note:"Cafes and old shophouses. With a child, stay early evening because the strip gets loud after dark.",more:[{name:"2 Tengkat Tong Shin",q:"2 Tengkat Tong Shin Kuala Lumpur"}]},
+ {t:"19:00",name:"Lai Foong Lala Noodles",q:"Lai Foong Lala Noodles Bukit Bintang Kuala Lumpur",note:"Michelin Bib Gourmand clam noodles (lala bihun) in a broth with Shaoxing wine and ginger. It has two floors."}
+],tips:["Heun Kee Claypot Chicken Rice (59 Jalan Yew, Pudu) is also close to the Wong Mei Kee street. Check it is open and when, then add it to lunch or dinner if you like.","This is a loose day. Cut anything that drags."]},
+
+{id:"d30",n:30,dow:"Wed",stay:3,title:"Free day, you choose",stops:[
+ {t:"09:00",name:"Option A: Melaka day trip",q:"Jonker Street Melaka",note:"About 2 hours each way by bus from TBS (Terminal Bersepadu Selatan). Book bus tickets ahead in holiday season. Jonker Street's night market runs on weekend evenings, so on a Wednesday expect the shops and cafes, not the market.",leg:{lines:["bus"],text:"Grab to TBS, then an express bus to Melaka Sentral."}},
+ {t:"10:30",name:"Option B: KLCC Aquaria and a slow day",q:"Aquaria KLCC Kuala Lumpur",note:"No booking needed. Easy on the legs after Genting. Add last-minute shopping at Pavilion or Berjaya Times Square.",more:[{name:"Pavilion KL",q:"Pavilion Kuala Lumpur Bukit Bintang"}]},
+ {t:"12:30",name:"EPL Cafe roti canai",q:"EPL Cafe roti canai Kuala Lumpur",note:"Casual roti canai lunch, listed RM 1 to 20 and rated 4.2 on Google. Option B only."},
+ {t:"14:00",name:"SuperPark Malaysia",q:"SuperPark Malaysia",note:"Indoor playground rated 4.9 on Google from over 13,000 reviews. A good energy-burner for your 8-year-old. Check hours and booking on their site.",leg:{lines:["grab"],text:"Grab to the playground, then on to TRX."}},
+ {t:"17:00",name:"TRX City Park and I'm Donut? TRX",q:"TRX City Park Kuala Lumpur",note:"The park at Tun Razak Exchange (4.5 on Google), then donuts in the TRX mall (listed RM 20 to 80).",more:[{name:"I'm Donut? TRX",q:"I'm Donut TRX Kuala Lumpur"}]},
+ {t:"19:30",name:"Back at "+SOC,q:"Societe Suites by iHost Global Kuala Lumpur",note:"Pack tonight. Your flight is at 11:05 tomorrow."}
+],tips:["Pick A or B the night before, depending on how tired everyone is.","Option B stacks four stops. Drop SuperPark or TRX if energy is low.","Sunway Lagoon is dropped from the plan."]},
+
+{id:"d31",n:31,dow:"Thu",stay:0,title:"Departure",stops:[
+ {t:"06:30",name:"Leave "+SOC,q:"Societe Suites by iHost Global Kuala Lumpur",note:"Check out and leave for KL Sentral. Confirm with your airline how early you must be at KLIA for the 11:05 flight, about three hours before is typical for an international departure."},
+ {leg:{lines:["grab","erl"],text:"Grab to KL Sentral, then KLIA Ekspres to KLIA (about 30 min). Check the first train time the night before.",dir:["KL Sentral","KLIA Terminal 1"]}},
+ {t:"08:00",name:"KLIA",q:"KLIA Terminal 1 Sepang",note:"Check in, drop bags, spend the last ringgit on snacks. Flight at 11:05."}
+],tips:["Keep passports and boarding passes in one pocket.","Your flight transits Singapore, so check onward baggage rules and any arrival card needs for the next leg."]}
+];
+
+var STAYS=[
+{cls:"s1",name:ASTERN,dates:"24 to 27 Dec · 3 nights",price:"Price: see your Booking.com confirmation",note:"Replaces Platinum Astern SUITES. The Mews, Jalan Yap Kwan Seng. About 560 m (8 min walk) to KLCC LRT and about 940 m to Persiaran KLCC MRT. Base for the Batu Caves, Bird Park and Chinatown days. Check out on Sun 27 Dec.",q:"The Mews Jalan Yap Kwan Seng Kuala Lumpur"},
+{cls:"s2",name:LEVERT,dates:"27 to 28 Dec · 1 night",price:"LKR 33,263",note:"Your Genting night. Confirm on Booking.com that the address is on the mountain and how far it is from the cable car and the parks.",q:"Le Vert Boutique Hotel Genting Highlands"},
+{cls:"s3",name:SOC,dates:"28 to 31 Dec · 3 nights",price:"LKR 103,937",note:"Base for the shopping, Sunway Lagoon and departure days. Check the nearest station from your confirmation.",q:"Societe Suites by iHost Global Kuala Lumpur"}
+];
+
+var FOOD=[
+["Wong Mei Kee","Roast pork, char siew","30 Jalan Nyonya, off Jalan Pudu","Tue 29 Dec, lunch after Immersify","Wong Mei Kee 30 Jalan Nyonya Pudu Kuala Lumpur"],
+["Heun Kee Claypot Chicken Rice","Claypot rice over charcoal","59 Jalan Yew, Pudu","Optional Tue 29 Dec. Check it is open","Heun Kee Claypot Chicken Rice 59 Jalan Yew Pudu Kuala Lumpur"],
+["Hing Kee Bakuteh","Bak kut teh, wet and dry","121 Jalan Kepong, Taman Usahawan","Fri 25 Dec, lunch","Hing Kee Bakuteh 121 Jalan Kepong Kuala Lumpur"],
+["Nam Heong Chicken Rice","Hainanese chicken rice","City Centre","Sat 26 Dec, dinner","Nam Heong Chicken Rice Kuala Lumpur"],
+["Sin Kiew Yee Shin Kee","Beef noodles","City Centre","Sat 26 Dec, dinner alternative","Sin Kiew Yee Shin Kee Beef Noodles Kuala Lumpur"],
+["Lai Foong Lala Noodles","Clam noodles (lala bihun)","Bukit Bintang","Tue 29 Dec, dinner","Lai Foong Lala Noodles Bukit Bintang Kuala Lumpur"]
+];
+
+var CHEAP=[["Petaling Street","Petaling Street Chinatown Kuala Lumpur"],["Plaza GM","Plaza GM Kuala Lumpur"],["Mydin","Mydin Kuala Lumpur"],["Ecoplus","Ecoplus Kuala Lumpur"],["Haniffa Department Store","Haniffa Department Store Kuala Lumpur"]];
+var FANCY=[["Pavilion KL","Pavilion Kuala Lumpur Bukit Bintang"],["Berjaya Times Square","Berjaya Times Square Kuala Lumpur"],["Genting Premium Outlets","Genting Highlands Premium Outlets"]];
+
+var CHECK=[
+"Passports valid for at least six months from 24 Dec, and visa rules checked for every traveller",
+"Submit the Malaysia Digital Arrival Card for each traveller if it applies to your passports. Check the official immigration site for the deadline",
+"Download Booking.com confirmations for all three hotels so they work offline",
+"Read the 28 Dec skyway booking: which cable car, which station, which time",
+"Set up Touch 'n Go eWallet, MyRapid PULSE, Moovit and Grab",
+"Keep your Immersify KL and SkyWorlds confirmations where you can open them offline",
+"Check the child's height for the SkyWorlds ticket tier, and set up the SkyWorlds virtual queue in the app",
+"Light jacket for Genting, modest clothes for Batu Caves, swimwear for Sunway Lagoon",
+"Travel insurance and some ringgit cash for small stalls",
+"Check KLIA Ekspres first train for 31 Dec and the airline's check-in cut-off"
+];
+
+function el(h){var d=document.createElement("div");d.innerHTML=h;return d.firstElementChild;}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+function pinA(name,q,label){return '<a class="pin" target="_blank" rel="noopener" href="'+pinUrl(q)+'">'+esc(label||("Pin: "+name))+'</a>';}
+var STAYNAMES=[null,ASTERN,LEVERT,SOC];
+
+var daysEl=document.getElementById("days");
+DAYS.forEach(function(d){
+  var stayCls=d.stay?("s"+d.stay):"s3";
+  var html='<article class="day" id="'+d.id+'"><header><div class="dnum"><small>'+d.dow+' Dec</small>'+d.n+'</div><h3>'+esc(d.title)+'</h3>'+
+    '<span class="basepill '+stayCls+'">'+(d.stay?("Night: "+esc(STAYNAMES[d.stay])):"Departure day")+'</span></header><ol class="tl">';
+  d.stops.forEach(function(s){
+    if(s.leg){
+      var chips=s.leg.lines.map(function(k){return '<span class="chip '+LINES[k][1]+'">'+LINES[k][0]+'</span>';}).join("");
+      var dir=s.leg.dir?' <a target="_blank" rel="noopener" href="'+dirUrl(s.leg.dir[0],s.leg.dir[1])+'">Transit route</a>':"";
+      html+='<li class="leg-li"><span class="tm"></span><span class="rail"></span><div class="leg"><span class="chips">'+chips+'</span><span class="t">'+esc(s.leg.text)+dir+'</span></div></li>';
+    }
+    if(s.t){
+      if(s.leg&&!s.name){return;}
+      var pins=pinA(s.name,s.q);
+      (s.more||[]).forEach(function(m){pins+=pinA(m.name,m.q);});
+      html+='<li><span class="tm">'+esc(s.t)+'</span><span class="rail"></span><div class="stop"><h4>'+esc(s.name)+'</h4><p>'+esc(s.note)+'</p><div class="pins">'+pins+'</div></div></li>';
+    }
+  });
+  html+='</ol><ul class="tips">'+d.tips.map(function(t){return '<li>'+esc(t)+'</li>';}).join("")+'</ul></article>';
+  daysEl.appendChild(el(html));
+});
+
+var strip=document.getElementById("strip");
+DAYS.forEach(function(d){
+  strip.appendChild(el('<a role="listitem" class="'+(d.stay?("s"+d.stay):"s0")+'" href="#'+d.id+'"><b>'+d.n+' '+d.dow+'</b><small>'+(d.stay?(d.stay===1?"KLCC":d.stay===2?"Genting":"KL Societe"):"Fly home")+'</small></a>'));
+});
+
+var sg=document.getElementById("staygrid");
+STAYS.forEach(function(s){
+  sg.appendChild(el('<div class="card"><div class="stay-top '+s.cls+'"></div><h3>'+esc(s.name)+'</h3><div class="meta">'+esc(s.dates)+' · '+esc(s.price)+'</div><p>'+esc(s.note)+'</p><div class="pins">'+pinA(s.name,s.q,"Pin on map")+'<a class="pin" target="_blank" rel="noopener" href="https://www.booking.com">Booking.com</a></div></div>'));
+});
+
+var fb=document.getElementById("foodbody");
+FOOD.forEach(function(f){
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td><b>'+esc(f[0])+'</b></td><td>'+esc(f[1])+'</td><td>'+esc(f[2])+'</td><td>'+esc(f[3])+'</td><td>'+pinA(f[0],f[4],"Pin")+'</td>';
+  fb.appendChild(tr);
+});
+CHEAP.forEach(function(c){document.getElementById("pins-cheap").insertAdjacentHTML("beforeend",pinA(c[0],c[1],c[0]));});
+FANCY.forEach(function(c){document.getElementById("pins-fancy").insertAdjacentHTML("beforeend",pinA(c[0],c[1],c[0]));});
+
+var nav=document.getElementById("navrow");
+DAYS.forEach(function(d){nav.insertAdjacentHTML("beforeend",'<a class="d" href="#'+d.id+'">'+d.n+'</a>');});
+nav.insertAdjacentHTML("beforeend",'<span class="sep"></span><a href="#stays">Stays</a><a href="#food">Food</a><a href="#shop">Shopping</a><a href="#move">Transport</a><a href="#list">Checklist</a>');
+
+var KEY="malaysia-dec-2026-checklist", saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){saved={};}
+var cl=document.getElementById("checklist");
+CHECK.forEach(function(t,i){
+  var li=document.createElement("li");
+  var id="chk"+i;
+  li.innerHTML='<label for="'+id+'"><input type="checkbox" id="'+id+'"'+(saved[id]?" checked":"")+'><span>'+esc(t)+'</span></label>';
+  li.querySelector("input").addEventListener("change",function(e){
+    saved[id]=e.target.checked;
+    try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(err){}
+  });
+  cl.appendChild(li);
+});
+
+/* ===== interactive layer: navigate, tick off, today mode, export ===== */
+var st=document.createElement('style');
+st.textContent=`.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.btn{font:600 14px var(--f-body);padding:9px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--surface);color:var(--accent);cursor:pointer;text-decoration:none;display:inline-block}.btn.pri{background:var(--accent);color:var(--accent-ink)}.pin.go{background:var(--accent);color:var(--accent-ink)}.pin.dn{background:transparent;cursor:pointer;font-family:inherit}li.done .stop h4,li.done .stop p{text-decoration:line-through;opacity:.55}li.done .rail::after{background:var(--accent)}.dayact{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:10px 18px;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}.day.today{outline:3px solid var(--signal)}.todaytag{background:var(--signal);color:#10231F;font-family:var(--f-mono);font-size:12px;padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}#nextbar{position:fixed;left:0;right:0;bottom:0;z-index:11;background:var(--ink);color:var(--bg);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;gap:10px;align-items:center;justify-content:space-between}#nextbar b{display:block}#nextbar a{background:var(--signal);color:#10231F;font-weight:700;text-decoration:none;padding:10px 16px;border-radius:999px;white-space:nowrap}.tools{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:10px}.tools p{margin:0;font-size:14px;color:var(--muted)}.trrow{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font-size:13px;color:var(--muted)}.trrow .i{display:inline-flex;align-items:center;gap:6px}.ag{background:#E8710A}.mrt{background:#2E7D32}.mo{background:#6A9E1F}`;
+document.head.appendChild(st);
+
+var DKEY='malaysia-dec-2026-done', done={};
+var KIND={kj:['🚇 LRT','kj'],ag:['🚇 LRT','ag'],mrt:['🚇 MRT','mrt'],mo:['🚝 Mono','mo'],ktm:['🚆 KTM','ktm'],erl:['🚆 ERL','erl'],grab:['🚕 Grab','grab']};
+var TR={
+ 'Kuala Lumpur International Airport (KLIA)':[['erl','KLIA Ekspres at the terminal','']],
+ 'KLCC Sky Villa Suites The Mews':[['kj','KLCC','560 m'],['mrt','Persiaran KLCC','940 m']],
+ 'KLCC Park and Petronas Twin Towers':[['kj','KLCC','~400 m']],
+ 'Jalan Alor Food Street':[['mrt','Bukit Bintang','~450 m'],['mo','Bukit Bintang','~500 m']],
+ 'Batu Caves':[['ktm','Batu Caves','~100 m']],
+ 'Hing Kee Bakuteh':[['grab','No station within walking distance','']],
+ 'Thean Hou Temple':[['grab','No station within walking distance','']],
+ 'Pavilion Kuala Lumpur':[['mrt','Bukit Bintang','~300 m'],['mo','Bukit Bintang','~300 m']],
+ 'Bukit Bintang: KKV and Plaza Low Yat':[['mrt','Bukit Bintang','~400 m'],['mo','Bukit Bintang','~400 m']],
+ 'KL Bird Park':[['grab','No station within walking distance','']],
+ 'Masjid Jamek':[['kj','Masjid Jamek','at station'],['ag','Masjid Jamek','at station']],
+ 'Bangunan Sultan Abdul Samad':[['kj','Masjid Jamek','~400 m'],['ag','Masjid Jamek','~400 m']],
+ 'Central Market':[['kj','Pasar Seni','~150 m'],['mrt','Pasar Seni','~150 m']],
+ 'Petaling Street (Chinatown)':[['kj','Pasar Seni','~400 m'],['mrt','Pasar Seni','~400 m']],
+ 'River of Life':[['kj','Masjid Jamek','at station'],['ag','Masjid Jamek','at station']],
+ 'Le Vert Boutique Hotel':[['grab','No rail on the mountain. Grab or Genting bus','']],
+ 'Check in at Societe Suites by iHost Global':[['mrt','Sri Hartamas (per listings, confirm on Booking.com)','~1 km']],
+ 'Immersify KL (booked)':[['ag','Hang Tuah','~400 m'],['mo','Hang Tuah','~400 m']],
+ 'Wong Mei Kee':[['ag','Plaza Rakyat','~900 m']],
+ 'Berjaya Times Square':[['mo','Imbi','~250 m'],['mrt','Bukit Bintang','~600 m']],
+ 'Changkat Bukit Bintang and 2 Tengkat Tong Shin':[['mrt','Bukit Bintang','~450 m']],
+ 'Option B: KLCC Aquaria and a slow day':[['kj','KLCC','~450 m']],
+ 'TRX City Park and I\'m Donut? TRX':[['mrt','Tun Razak Exchange','~400 m']],
+ 'KLIA':[['erl','KLIA Ekspres at the terminal','']]
+};
+function trHtml(a){return '<div class=trrow>'+a.map(function(r){var k=KIND[r[0]];return `<span class=i><span class='chip ${k[1]}'>${k[0]}</span> ${esc(r[1])}${r[2]?' · 🚶 '+esc(r[2]):''}</span>`;}).join('')+'</div>';}
+try{done=JSON.parse(localStorage.getItem(DKEY)||'{}')||{};}catch(e){done={};}
+function saveDone(){try{localStorage.setItem(DKEY,JSON.stringify(done));}catch(e){}}
+function navUrl(q){return 'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+encodeURIComponent(q);}
+
+var arts={};
+DAYS.forEach(function(d){
+  var art=document.getElementById(d.id); arts[d.id]=art;
+  var lis=art.querySelectorAll('ol.tl>li:not(.leg-li)');
+  var list=d.stops.filter(function(s){return s.t;});
+  list.forEach(function(s,i){
+    var li=lis[i]; if(!li)return;
+    var key=d.id+'-'+i; li.dataset.key=key; li.dataset.q=s.q||s.name; li.dataset.name=s.name; li.dataset.t=s.t;
+    if(done[key])li.classList.add('done');
+    var pins=li.querySelector('.pins');
+    var trd=TR[s.name]; if(trd){li.querySelector('.stop p').insertAdjacentHTML('afterend',trHtml(trd));}
+    pins.insertAdjacentHTML('afterbegin',`<a class='pin go' target='_blank' rel='noopener' href='${navUrl(s.q||s.name)}'>Navigate here</a>`+((i>0&&d.id!=='d30'&&list[i-1].q&&list[i-1].q!==s.q)?`<a class='pin' target='_blank' rel='noopener' href='${dirUrl(list[i-1].q,s.q||s.name)}'>🚇 Transit from previous stop</a>`:''));
+    var b=document.createElement('button'); b.type='button'; b.className='pin dn';
+    b.textContent=done[key]?'Done':'Mark done'; b.setAttribute('aria-pressed',done[key]?'true':'false');
+    b.addEventListener('click',function(){
+      var v=!li.classList.contains('done'); li.classList.toggle('done',v);
+      if(v)done[key]=1; else delete done[key];
+      saveDone(); b.textContent=v?'Done':'Mark done'; b.setAttribute('aria-pressed',v?'true':'false'); refresh();
+    });
+    pins.appendChild(b);
+  });
+  var qs=[]; list.forEach(function(s){if(s.q&&qs.indexOf(s.q)<0&&!/^(Check out|Hotel breakfast|Breakfast|Leave )/i.test(s.name))qs.push(s.q);});
+  qs=qs.slice(0,10);
+  var act=document.createElement('div'); act.className='dayact';
+  var route=(qs.length>1&&d.id!=='d30')?`<a class='btn pri' target='_blank' rel='noopener' href='https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(qs[0])}&destination=${encodeURIComponent(qs[qs.length-1])}&waypoints=${encodeURIComponent(qs.slice(1,-1).join('|'))}'>Full-day route in Google Maps</a>`:'';
+  act.innerHTML=route+'<span class=prog></span>';
+  art.querySelector('header').after(act);
+});
+
+var bar=document.createElement('div'); bar.id='nextbar'; document.body.appendChild(bar);
+var ymd=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kuala_Lumpur'});
+var todayId=null;
+DAYS.forEach(function(d){if(ymd==='2026-12-'+(d.n<10?'0'+d.n:d.n))todayId=d.id;});
+if(todayId){var ta=arts[todayId]; ta.classList.add('today'); ta.querySelector('h3').insertAdjacentHTML('beforeend','<span class=todaytag>TODAY</span>');}
+
+function updateNext(){
+  if(!todayId){bar.style.display='none';return;}
+  var nx=arts[todayId].querySelector('ol.tl>li[data-key]:not(.done)');
+  bar.style.display='flex'; document.body.style.paddingBottom='90px';
+  if(!nx){bar.innerHTML='<div><b>All stops done for today</b></div>';return;}
+  bar.innerHTML=`<div><b>Next: ${esc(nx.dataset.name)}</b><span>${esc(nx.dataset.t)}</span></div><a target='_blank' rel='noopener' href='${navUrl(nx.dataset.q)}'>Navigate</a>`;
+}
+function refresh(){
+  DAYS.forEach(function(d){
+    var a=arts[d.id]; var all=a.querySelectorAll('ol.tl>li[data-key]').length; var n=a.querySelectorAll('ol.tl>li.done').length;
+    a.querySelector('.prog').textContent=n+' of '+all+' stops done';
+  });
+  updateNext();
+}
+
+function csvText(){
+  var rows=[['Name','Search','Day','Time','Notes']];
+  STAYS.forEach(function(s){rows.push([s.name,s.q,s.dates,'','Hotel']);});
+  DAYS.forEach(function(d){d.stops.forEach(function(s){
+    if(!s.t||/^(Check out|Hotel breakfast|Breakfast|Leave )/i.test(s.name))return;
+    rows.push([s.name,s.q,d.dow+' '+d.n+' Dec',s.t,s.note]);
+    (s.more||[]).forEach(function(m){rows.push([m.name,m.q,d.dow+' '+d.n+' Dec',s.t,'Also on this stop']);});
+  });});
+  return rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\r\n');
+}
+
+var days2go='';
+if(!todayId){
+  var p=ymd.split('-').map(Number);
+  var diff=Math.ceil((Date.UTC(2026,11,24)-Date.UTC(p[0],p[1]-1,p[2]))/864e5);
+  days2go=diff>0?diff+' days to go until you land in Kuala Lumpur.':'Trip dates have passed.';
+} else {days2go='Today is a trip day. The Next stop bar is pinned at the bottom of the screen.';}
+
+var tb=document.createElement('div'); tb.className='tools';
+tb.innerHTML=`<b>${days2go}</b><p><b>Transport on each stop:</b> 🚇 LRT or MRT, 🚝 Monorail, 🚆 KTM or KLIA Ekspres, 🚕 Grab only, 🚶 walking distance to the nearest station. A tilde means a rounded estimate, so tap Navigate for the exact route.</p><div class=bar><button class='btn pri' id=tJump type=button>Jump to today</button><button class=btn id=tShare type=button>Share</button><button class=btn id=tCopy type=button>Copy places for Google My Maps</button><button class=btn id=tReset type=button>Reset ticks</button></div><p><b>Save on your phone:</b> open this page, then use your browser menu and choose Add to Home Screen. Your ticks are saved on that device.</p><p><b>All places inside Google Maps:</b> tap Copy places for Google My Maps and paste into a new Google Sheet, then open mymaps.google.com, create a map and import that sheet. Choose the Search column to place the pins and Name for titles. The map then shows in the Google Maps app under Saved, then Maps.</p><p id=tMsg></p>`;
+document.querySelector('.hero .note').insertAdjacentElement('beforebegin',tb);
+function msg(t){document.getElementById('tMsg').textContent=t;}
+document.getElementById('tJump').addEventListener('click',function(){
+  var t=todayId?arts[todayId]:arts.d24; t.scrollIntoView({behavior:'smooth'});
+  if(!todayId)msg('Not a trip day yet, so this goes to Day 1.');
+});
+document.getElementById('tShare').addEventListener('click',function(){
+  var url=location.href;
+  if(navigator.share){navigator.share({title:'Malaysia December 2026',url:url}).catch(function(){});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){msg('Link copied.');},function(){msg('Copy the link from your browser bar.');});}
+  else msg('Copy the link from your browser bar.');
+});
+document.getElementById('tCopy').addEventListener('click',function(){
+  if(navigator.clipboard){navigator.clipboard.writeText(csvText()).then(function(){msg('Copied. Paste into cell A1 of a new Google Sheet, then import that sheet into My Maps.');},function(){msg('Copy is blocked here.');});}
+  else msg('Copy is blocked here.');
+});
+document.getElementById('tReset').addEventListener('click',function(){
+  done={}; saveDone();
+  document.querySelectorAll('li.done').forEach(function(l){l.classList.remove('done');});
+  document.querySelectorAll('.pin.dn').forEach(function(b){b.textContent='Mark done';b.setAttribute('aria-pressed','false');});
+  refresh(); msg('Ticks cleared.');
+});
+refresh();
+if(todayId){setTimeout(function(){arts[todayId].scrollIntoView({behavior:'smooth'});},400);}
+})();
+</script>
+
+<script>
+(function(){
+var T=Date.parse('2026-12-24T16:15:00+08:00'), E=Date.parse('2026-12-31T11:05:00+08:00');
+var tb=document.querySelector('.tools'); if(!tb)return;
+var old=tb.querySelector('b'); if(!old)return;
+var st=document.createElement('style');
+st.textContent=`#cdbox{text-align:center}.cdl{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.cdr{display:flex;gap:8px;justify-content:center}.cdc{flex:1;max-width:96px;background:var(--accent);color:#fff;border-radius:8px;padding:8px 4px;border-bottom:3px solid #C9A227}.cdc b{display:block;font-family:var(--f-mono);font-size:clamp(24px,7vw,38px);font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums}.cdc span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}.cdmsg{font-weight:700;font-size:18px}`;
+document.head.appendChild(st);
+var box=document.createElement('div'); box.id='cdbox'; old.replaceWith(box);
+function pad(n){return n<10?'0'+n:''+n;}
+function cell(v,l){return `<div class=cdc><b>${v}</b><span>${l}</span></div>`;}
+function tick(){
+  var now=Date.now(), d=T-now;
+  if(d<=0){box.innerHTML='<div class=cdmsg>'+(now<E?'You are in Malaysia. Enjoy the trip!':'Trip complete. Welcome home!')+'</div>';return;}
+  var s=Math.floor(d/1000), dd=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60;
+  box.innerHTML='<div class=cdl>Landing in Kuala Lumpur in</div><div class=cdr>'+cell(dd,'days')+cell(pad(h),'hours')+cell(pad(m),'min')+cell(pad(ss),'sec')+'</div>';
+}
+tick(); setInterval(tick,1000);
+})();
+(function(){
+var I={
+ tower:`<path d='M10 58V26l8-10V6m0 10l8 10v32M38 58V26l8-10V6m0 10l8 10v32M26 34h12M26 42h12'/>`,
+ tall:`<path d='M24 58V20l8-14 8 14v38M24 34h16M24 46h16'/>`,
+ steps:`<path d='M8 58V30a24 24 0 0 1 48 0v28M16 58l4-6h24l4 6M22 52l3-6h14l3 6M28 46l2-5h4l2 5'/>`,
+ clock:`<path d='M24 58V20h16v38M28 20v-6h8v6M32 14V6M10 58V38h10v20M44 58V38h10v20M10 38q5-8 10 0M44 38q5-8 10 0'/><circle cx='32' cy='30' r='4'/>`,
+ mountain:`<path d='M2 56l20-32 12 18 8-10 20 24z'/><path d='M44 12a6 6 0 0 1 12 0M40 12h18'/>`,
+ cablecar:`<path d='M4 54l20-26 12 14 10-12 14 24zM6 10l52 10M32 15v8'/><rect x='25' y='23' width='14' height='10' rx='2'/>`,
+ bowl:`<path d='M8 32c0 14 10 24 24 24s24-10 24-24zM22 8l14 22M30 6l14 24'/>`,
+ gate:`<path d='M6 58V26h14v-8h24v8h14v32M24 58V38a8 8 0 0 1 16 0v20'/>`,
+ hibiscus:`<circle cx='32' cy='16' r='11'/><circle cx='48' cy='28' r='11'/><circle cx='42' cy='46' r='11'/><circle cx='22' cy='46' r='11'/><circle cx='16' cy='28' r='11'/><path d='M32 32l10-20M32 32l8 14'/>`,
+ pagoda:`<path d='M32 4v8M12 20h40l-6-8H18zM16 36h32l-6-8H22zM10 52h44l-8-8H18zM14 52v8M50 52v8'/>`,
+ bag:`<path d='M12 22h40l4 36H8zM22 22v-4a10 10 0 0 1 20 0v4'/>`,
+ bird:`<ellipse cx='28' cy='36' rx='18' ry='12'/><circle cx='48' cy='26' r='7'/><path d='M55 26l7 3-7 2M10 32L2 24M12 40L2 44M28 48v10M22 48l-4 10'/>`,
+ ripples:`<path d='M4 22q7-6 14 0t14 0 14 0 14 0M4 34q7-6 14 0t14 0 14 0 14 0M4 46q7-6 14 0t14 0 14 0 14 0'/>`,
+ lantern:`<path d='M32 4v6M24 10h16M24 48h16M28 48v10M36 48v10'/><ellipse cx='32' cy='30' rx='16' ry='18'/>`,
+ snow:`<path d='M32 4v56M8 18l48 28M8 46l48-28M26 8l6 6 6-6M26 56l6-6 6 6'/>`,
+ ferris:`<circle cx='32' cy='28' r='22'/><circle cx='32' cy='28' r='3'/><path d='M32 6v44M10 28h44M16 12l32 32M16 44l32-32M20 60l12-32 12 32'/>`,
+ rays:`<circle cx='32' cy='32' r='12'/><path d='M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M12 52l6-6M46 18l6-6'/>`,
+ slide:`<path d='M8 10v48M8 14h14l22 36h14M8 58h48'/>`,
+ shops:`<path d='M4 58V26h18v32M22 58V18h20v40M42 58V28h18v30M8 34h10M8 44h10M26 26h12M26 36h12M26 46h12M46 36h10M46 46h10'/>`,
+ fish:`<path d='M6 32c10-16 26-16 38 0-12 16-28 16-38 0zM44 32l14-12v24z'/><circle cx='18' cy='29' r='2'/>`,
+ plane:`<path d='M8 34l48-6-8 8 8 6-12-2-8 12-4-12-24-6z'/>`,
+ pot:`<path d='M10 28h44l-4 24a8 8 0 0 1-8 6H22a8 8 0 0 1-8-6zM6 28h52M20 18c0-6 6-6 6-12M34 18c0-6 6-6 6-12'/>`
+};
+function svg(k){return `<svg viewBox='0 0 64 64' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'>${I[k]}</svg>`;}
+var HD={d24:'tower',d25:'steps',d26:'clock',d27:'mountain',d28:'cablecar',d29:'bowl',d30:'gate',d31:'hibiscus'};
+Object.keys(HD).forEach(function(id){var h=document.querySelector('#'+id+'>header'); if(h)h.insertAdjacentHTML('beforeend','<span class=wm>'+svg(HD[id])+'</span>');});
+var SM=[[/^KLCC Park/,'tower'],[/^Jalan Alor/,'bowl'],[/^Batu Caves/,'steps'],[/^Hing Kee/,'bowl'],[/^Thean Hou/,'pagoda'],[/^Pavilion/,'bag'],[/^Bukit Bintang: KKV/,'bag'],[/^KL Bird Park/,'bird'],[/^Masjid Jamek/,'ripples'],[/^River of Life/,'ripples'],[/^Bangunan Sultan/,'clock'],[/^Central Market/,'lantern'],[/^Petaling Street/,'lantern'],[/^Nam Heong/,'bowl'],[/^Ninso/,'bag'],[/^Chin Swee/,'pagoda'],[/^First World Plaza/,'snow'],[/^Genting SkyWorlds/,'ferris'],[/^Genting Skytropolis/,'ferris'],[/^Your booked skyway/,'cablecar'],[/^Immersify/,'rays'],[/^Wong Mei Kee/,'bowl'],[/^Berjaya Times Square/,'slide'],[/^Changkat/,'shops'],[/^Lai Foong/,'bowl'],[/^Option A/,'gate'],[/^Option B/,'fish'],[/^EPL Cafe/,'pot'],[/^SuperPark/,'slide'],[/^TRX City Park/,'tall'],[/^KLIA$/,'plane'],[/^Kuala Lumpur International Airport/,'plane']];
+document.querySelectorAll('.day .stop').forEach(function(st){var h=st.querySelector('h4'); var n=h?h.textContent:''; for(var i=0;i<SM.length;i++){if(SM[i][0].test(n)){st.insertAdjacentHTML('afterbegin','<span class=swm>'+svg(SM[i][1])+'</span>');break;}}});
+})();
+</script>
+<style id="s3d2">
+/* ===== tiger lane, hologram, itinerary clock ===== */
+
+
+/* itinerary clock */
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 16px;display:grid;gap:8px}
+.tcard .trow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tcard .trow b{font-size:15px}
+.tcard #tval{font:500 24px var(--f-mono);color:var(--accent)}
+.tcard input[type=range]{width:100%;accent-color:var(--accent)}
+.tcard #tinfo{font-size:14px;color:var(--muted)}
+.tcard .hint{font-size:12.5px;color:var(--muted)}
+.day.active{box-shadow:0 0 0 2px #C9A227,0 16px 40px rgba(30,42,42,.2)}
+.day .stop{cursor:pointer}
+li.tpast .stop{opacity:.5}
+li.tnow .stop{background:linear-gradient(90deg,rgba(201,162,39,.2),transparent 85%);border-radius:8px;box-shadow:inset 3px 0 0 var(--dd);padding-left:8px}
+li.tnow .tm{color:var(--dd);font-weight:700}
+li.tnow .rail::after{transform:scale(1.35)}
+
+/* hologram */
+#holo{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;justify-content:center;padding:0 10px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none}
+#holo.on{display:flex}
+#holo .hbox{pointer-events:auto;position:relative;max-width:480px;width:100%;display:grid;grid-template-columns:128px 1fr;gap:12px;align-items:center;padding:12px 14px;border-radius:16px;color:#D8F6FF;background:linear-gradient(160deg,rgba(5,30,38,.92),rgba(8,44,52,.88));border:1px solid rgba(110,231,255,.55);box-shadow:0 0 30px rgba(80,220,255,.35),inset 0 0 34px rgba(80,220,255,.12);backdrop-filter:blur(8px);overflow:hidden;animation:holoin .6s cubic-bezier(.2,.9,.2,1)}
+#holo .hbox::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(110,231,255,.07) 0 1px,transparent 1px 4px);pointer-events:none;animation:scan 6s linear infinite}
+@keyframes scan{to{background-position:0 80px}}
+@keyframes holoin{from{opacity:0;transform:translateY(40px) scale(.9);filter:brightness(2.2) blur(3px)}to{opacity:1;transform:none;filter:none}}
+#holo .hx{position:absolute;right:8px;top:6px;z-index:3;background:none;border:1px solid rgba(110,231,255,.5);color:#BDF3FF;border-radius:50%;width:28px;height:28px;font-size:16px;cursor:pointer}
+#holo .hstage{position:relative;width:128px;height:128px;perspective:520px}
+#holo .hbeam{position:absolute;left:14%;right:14%;bottom:14px;top:2px;background:linear-gradient(180deg,rgba(110,231,255,0),rgba(110,231,255,.28));clip-path:polygon(30% 0,70% 0,100% 100%,0 100%)}
+#holo .hring{position:absolute;left:6%;right:6%;bottom:6px;height:22px;border-radius:50%;border:2px solid rgba(110,231,255,.85);box-shadow:0 0 14px rgba(110,231,255,.7),inset 0 0 12px rgba(110,231,255,.4);animation:ringp 2.2s ease-in-out infinite}
+@keyframes ringp{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.08);opacity:.55}}
+#holo .hicon{position:absolute;left:24px;top:8px;width:80px;height:84px;transform-style:preserve-3d;animation:hspin 8s linear infinite}
+@keyframes hspin{to{transform:rotateY(360deg)}}
+#holo .hl{position:absolute;inset:0;color:#7FEBFF;filter:drop-shadow(0 0 6px #6EE7FF);animation:holof 3s steps(1) infinite}
+#holo .hl svg{width:100%;height:100%;display:block}
+#holo .hl:nth-child(1){transform:translateZ(-14px);opacity:.55}
+#holo .hl:nth-child(2){transform:translateZ(0)}
+#holo .hl:nth-child(3){transform:translateZ(14px);opacity:.55}
+#holo .hk{font:500 10px var(--f-mono);letter-spacing:.18em;color:#7FEBFF}
+#holo h4{margin:2px 28px 2px 0;font:700 17px var(--f-body);color:#fff}
+#holo .hm{font:500 13px var(--f-mono);color:#FFE29A}
+#holo p{margin:6px 0 0;font-size:13px;line-height:1.4;color:#BFE8F2;max-height:5.6em;overflow:auto}
+#holo .hlinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+#holo .hlinks a{font-size:12.5px;font-weight:600;color:#06222A;background:#7FEBFF;border-radius:999px;padding:4px 11px;text-decoration:none}
+@media (prefers-reduced-motion:reduce){#holo .hicon,#holo .hbox::after,#holo .hring{animation:none!important}}
+</style>
+
+<script>
+(function(){
+  if(!document.getElementById('days-sec'))return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(i){return document.getElementById(i);};
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+  function minutes(t){var m=/^(\d{1,2}):(\d{2})/.exec(t||''); return m?(+m[1])*60+(+m[2]):null;}
+  function hhmm(m){var h=Math.floor(m/60),mm=m%60;return (h<10?'0':'')+h+':'+(mm<10?'0':'')+mm;}
+  function allLis(id){return Array.prototype.slice.call(document.querySelectorAll('#'+id+' ol.tl>li[data-key]'));}
+  function dayColor(id){var a=document.getElementById(id);return a?(getComputedStyle(a).getPropertyValue('--dd').trim()||'#0F6B5B'):'#0F6B5B';}
+  if(!document.querySelector('.day ol.tl>li[data-key]'))return;
+
+  var activeDay=null, activeLi=null;
+  function focus(li,source){
+    var day=li.closest('.day'); if(!day)return; var id=day.id;
+    if(id!==activeDay){ activeDay=id; document.querySelectorAll('.day').forEach(function(d){d.classList.toggle('active',d.id===id);}); applyTime(); }
+    if(window.__vac) window.__vac.impress(li);
+  }
+  window.__focusStop=focus;
+  /* ---------- itinerary clock ---------- */
+  var head=document.querySelector('#days-sec .sec-h');
+  head.insertAdjacentHTML('afterend',"<div class='tcard' id='tcard'><div class='trow'><b>Itinerary clock</b><span id='tval'>10:00</span><button class='btn' id='tNow' type='button'>Live now</button></div><input type='range' id='trange' min='360' max='1380' step='5' value='600' aria-label='Time of day'><div id='tinfo'></div><div class='hint'>Tap any stop to jump the clock to its time, project it as a hologram, and watch the tiger act it out.</div></div>");
+  var T=600, live=false;
+  function klNow(){
+    try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuala_Lumpur',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),h=0,m=0;p.forEach(function(x){if(x.type==='hour')h=+x.value%24;if(x.type==='minute')m=+x.value;});return h*60+m;}catch(e){return 600;}
+  }
+  function setT(m){T=Math.min(1380,Math.max(360,m)); $('trange').value=T; $('tval').textContent=hhmm(T);}
+  function applyTime(){
+    document.querySelectorAll('li.tpast,li.tnow').forEach(function(l){l.classList.remove('tpast','tnow');});
+    var info=$('tinfo'); if(!activeDay){info.textContent='Scroll or tap a day to start.';return;}
+    var lis=allLis(activeDay), now=null, next=null;
+    lis.forEach(function(li){var m=minutes(li.dataset.t); if(m===null)return; if(m<=T)now=li; else if(!next)next=li;});
+    lis.forEach(function(li){var m=minutes(li.dataset.t); if(m===null)return; if(li===now)li.classList.add('tnow'); else if(m<T)li.classList.add('tpast');});
+    info.innerHTML=(now?'At '+hhmm(T)+': <b>'+esc(now.dataset.name)+'</b>':'Before the first stop of the day')+(next?' &middot; next at '+esc(next.dataset.t)+': '+esc(next.dataset.name):' &middot; last stop of the day');
+  }
+  $('trange').addEventListener('input',function(){
+    live=false; setT(+this.value); applyTime();
+    var n=document.querySelector('li.tnow'); if(n){ activeLi=n; focus(n,'time'); }
+  });
+  $('tNow').addEventListener('click',function(){
+    var ymd=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kuala_Lumpur'}), m=/^2026-12-(2[4-9]|3[01])$/.exec(ymd);
+    live=true; setT(klNow());
+    if(m){ var li=allLis('d'+(+m[1].slice(-2)))[0]; if(li){ activeLi=li; focus(li,'time'); } }
+    else { $('tinfo').textContent='Live mode follows Kuala Lumpur time and starts on 24 Dec. Showing the current KL time on '+(activeDay?'the selected day':'Day 1')+' as a preview.'; if(!activeDay){var f=allLis('d24')[0]; if(f){activeLi=f;focus(f,'time');}} applyTime(); }
+    var n=document.querySelector('li.tnow'); if(n){ activeLi=n; focus(n,'time'); }
+  });
+  setInterval(function(){ if(live){setT(klNow()); applyTime();} },30000);
+  applyTime();
+
+  /* ---------- hologram of the location ---------- */
+  var PIN="<svg viewBox='0 0 64 64' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M32 60S12 38 12 26a20 20 0 0 1 40 0c0 12-20 34-20 34z'/><circle cx='32' cy='26' r='7'/></svg>";
+  var holo=document.createElement('div'); holo.id='holo'; holo.setAttribute('role','dialog'); holo.setAttribute('aria-label','Location hologram');
+  holo.innerHTML="<div class='hbox'><button class='hx' type='button' aria-label='Close hologram'>&times;</button><div class='hstage'><div class='hbeam'></div><div class='hring'></div><div class='hicon' id='hicon'></div></div><div><div class='hk'>HOLOGRAM &middot; LOCATION</div><h4 id='hname'></h4><div class='hm' id='hmeta'></div><p id='hnote'></p><div class='hlinks' id='hlinks'></div></div></div>";
+  document.body.appendChild(holo);
+  var holoLi=null;
+  function closeHolo(){holo.classList.remove('on');holoLi=null;}
+  holo.querySelector('.hx').addEventListener('click',closeHolo);
+  addEventListener('keydown',function(e){if(e.key==='Escape')closeHolo();});
+  function openHolo(li){
+    var sv=li.querySelector('.swm svg'), inner=sv?sv.outerHTML:PIN;
+    $('hicon').innerHTML="<div class='hl'>"+inner+"</div><div class='hl'>"+inner+"</div><div class='hl'>"+inner+"</div>";
+    $('hname').textContent=li.dataset.name; var dn=li.closest('.day').querySelector('.dnum'); var dsm=dn&&dn.querySelector('small'); $('hmeta').textContent=li.dataset.t+' · '+(dsm?dsm.textContent:'')+' '+(dn&&dn.lastChild?dn.lastChild.textContent:'');
+    var p=li.querySelector('.stop p'); $('hnote').textContent=p?p.textContent:'';
+    var links=''; var nav=li.querySelector('a.pin.go'); if(nav)links+="<a href='"+nav.href+"' target='_blank' rel='noopener'>Navigate</a>";
+    li.querySelectorAll('.pins a.pin').forEach(function(a){ if(/Transit from previous/.test(a.textContent)) links+="<a href='"+a.href+"' target='_blank' rel='noopener'>Transit</a>"; });
+    $('hlinks').innerHTML=links;
+    holo.classList.remove('on'); void holo.offsetWidth; holo.classList.add('on'); holoLi=li;
+  }
+
+  /* tap a stop: clock and hologram follow */
+  document.addEventListener('click',function(e){
+    var st=e.target.closest&&e.target.closest('.day .stop'); if(!st||e.target.closest('a,button'))return;
+    var li=st.closest('li[data-key]'); if(!li)return;
+    if(holoLi===li){closeHolo();return;}
+    activeLi=li; focus(li,'click');
+    var m=minutes(li.dataset.t); if(m!==null){live=false; setT(m); applyTime();}
+    openHolo(li);
+  });
+  /* tapping a day pill or strip tile selects that day */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('nav a[href^="#d"],.strip a[href^="#d"]'); if(!a)return;
+    var id=a.getAttribute('href').slice(1), f=allLis(id)[0]; if(f){ activeLi=f; focus(f,'pill'); }
+  });
+})();
+</script>
+
+<style id="sdur">
+/* ===== durian ===== */
+#durian{padding:6px 0 10px}
+.dstage{position:relative;text-align:center}
+.dscene{position:relative;width:min(100%,360px);height:min(86vw,330px);margin:0 auto;perspective:900px}
+.dw,.dc{position:absolute;inset:0;transition:transform .9s cubic-bezier(.5,.05,.3,1),opacity .6s;backface-visibility:hidden}
+.dw{transform:rotateY(0)}
+.dc{transform:rotateY(90deg) scale(.9);opacity:0;pointer-events:none}
+.dscene.cut .dw{transform:rotateY(-90deg) scale(.9);opacity:0;pointer-events:none}
+.dscene.cut .dc{transform:rotateY(0);opacity:1;pointer-events:auto}
+.dw svg,.dc svg{width:100%;height:100%;overflow:visible;display:block}
+.dw .spin{transform-origin:50% 55%;animation:dsw 7s ease-in-out infinite}
+@keyframes dsw{0%,100%{transform:rotateY(-18deg) rotateZ(-2deg)}50%{transform:rotateY(18deg) rotateZ(2deg) translateY(-6px)}}
+.dw svg{filter:drop-shadow(0 18px 14px rgba(30,42,10,.35))}
+.dw .th{animation:thm 2.4s ease-in-out infinite}
+@keyframes thm{50%{opacity:.82}}
+.knife{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;z-index:4}
+.dscene.cutting .knife{opacity:1}
+.knife line{stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;filter:drop-shadow(0 0 6px #fff)}
+.dscene.cutting .knife line{animation:kn .55s ease-out forwards}
+@keyframes kn{to{stroke-dashoffset:0}}
+.dc .wd{cursor:pointer;transform-origin:150px 150px;transition:transform .45s cubic-bezier(.3,1.5,.5,1);animation:br 3.2s ease-in-out infinite;animation-delay:calc(var(--k)*-.4s)}
+@keyframes br{50%{scale:1.03}}
+.dc .wd .fl{transition:fill .3s}
+.dc .wd:hover .fl,.dc .wd:focus-visible .fl{fill:#FFE27A}
+.dc .wd.on .fl{fill:#FFD84A;stroke:var(--c);stroke-width:4}
+.dc .wd:focus-visible{outline:none}
+.dc .seed{animation:sd 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes sd{50%{transform:rotate(10deg) scale(1.06)}}
+.dctl{display:flex;gap:8px;justify-content:center;align-items:center;margin:10px 0 2px;flex-wrap:wrap}
+.dbtn{font:700 15px var(--f-body);padding:11px 20px;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;animation:dpulse 2s ease-in-out infinite}
+.dbtn.ghost{background:transparent;color:var(--accent);animation:none}
+@keyframes dpulse{50%{box-shadow:0 0 0 9px rgba(15,107,91,0)}0%{box-shadow:0 0 0 0 rgba(15,107,91,.45)}}
+.dday{display:none;align-items:center;gap:8px;justify-content:center;margin-top:6px}
+body.sliced .dday{display:flex}
+.dday button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font:700 20px var(--f-body);color:var(--accent);cursor:pointer}
+.dday b{font:700 15px var(--f-body);min-width:0;flex:1;max-width:260px;text-align:center}
+.dday b small{display:block;font:500 12px var(--f-body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dcap{font-size:14px;color:var(--muted);margin:2px auto 12px;max-width:34em}
+#durian .facts{margin-top:14px}
+body:not(.sliced) #days-sec{display:none}
+body.sliced #slice{display:none}
+body:not(.sliced) #whole{display:none}
+#days .day{display:none}
+#days .day.sel{display:block;animation:dayin .6s ease-out both}
+@keyframes dayin{from{opacity:0;transform:perspective(800px) rotateX(10deg) translateY(16px)}to{opacity:1;transform:none}}
+li.imp .stop{box-shadow:inset 3px 0 0 #C9A227;background:linear-gradient(90deg,rgba(201,162,39,.16),transparent 80%);border-radius:8px}
+/* tiger on vacation */
+.vac{position:relative;height:262px;border-radius:16px;overflow:hidden;margin:0 0 14px;background:linear-gradient(180deg,color-mix(in srgb,var(--dd,#0F6B5B) 30%,#79CDE8) 0%,#E6F6FA 52%);box-shadow:0 14px 30px rgba(30,42,42,.22);animation:slicein .8s ease-out both}
+@keyframes slicein{from{clip-path:polygon(50% 0,50% 0,50% 0)}to{clip-path:polygon(-10% -10%,110% -10%,110% 110%,-10% 110%)}}
+.vac .sun{position:absolute;right:16px;top:14px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,#FFF4C2,#FFC93C 70%);box-shadow:0 0 0 8px rgba(255,214,90,.3),0 0 40px 10px rgba(255,214,90,.5);animation:sunp 4s ease-in-out infinite}
+@keyframes sunp{50%{box-shadow:0 0 0 14px rgba(255,214,90,.2),0 0 50px 14px rgba(255,214,90,.55)}}
+.vac .cl{position:absolute;height:14px;border-radius:12px;background:rgba(255,255,255,.75)}
+.vac .c1{width:70px;top:34px;left:-80px;animation:cd 30s linear infinite}
+.vac .c2{width:46px;top:70px;left:-60px;animation:cd 44s linear infinite 8s}
+@keyframes cd{to{transform:translateX(560px)}}
+.vac .sea{position:absolute;left:0;right:0;top:54%;height:13%;background:repeating-linear-gradient(90deg,#3FB6D6 0 22px,#59C6E2 22px 44px);animation:sea 3s linear infinite;opacity:.95}
+@keyframes sea{to{background-position:44px 0}}
+.vac .sand{position:absolute;left:0;right:0;top:67%;bottom:0;background:linear-gradient(180deg,#F4DDA0,#E4BC6A)}
+.vac .palm{position:absolute;bottom:34%;font-size:54px;line-height:1;transform-origin:50% 100%;animation:palm 3.6s ease-in-out infinite}
+.vac .palm.l{left:2%}.vac .palm.r{right:3%;animation-delay:-1.8s}
+@keyframes palm{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.vac .chip{position:absolute;right:10px;bottom:8px;font:600 11px var(--f-mono);background:rgba(30,42,42,.7);color:#fff;padding:3px 9px;border-radius:999px;z-index:5}
+.vac .tgv{position:absolute;left:50%;bottom:16px;width:116px;transform:translateX(-50%);z-index:3;cursor:pointer;touch-action:manipulation}
+.vac .tgv::after{content:'';position:absolute;left:8%;right:-6%;bottom:-6px;height:12px;border-radius:50%;background:rgba(80,50,10,.35);filter:blur(3px)}
+.vac .tbv{position:relative;transform-origin:50% 100%;z-index:1}
+.vac .tbv img{display:block;width:100%;height:auto;-webkit-user-drag:none;user-select:none;filter:drop-shadow(0 5px 4px rgba(30,20,5,.35))}
+.vac .hat{position:absolute;left:33%;top:-6%;transform:translate(-50%,-48%) rotate(-8deg);font-size:50px;line-height:1;z-index:2;filter:drop-shadow(0 3px 2px rgba(0,0,0,.25))}
+.vac .pp{position:absolute;right:-26px;top:6%;font-size:36px;line-height:1;animation:ppb 1.4s ease-in-out infinite;z-index:2}
+@keyframes ppb{50%{transform:translateY(-8px) rotate(8deg)}}
+.vac .dr{position:absolute;right:4%;bottom:12px;font-size:30px;z-index:4;animation:ppb 2.2s ease-in-out infinite}
+.vac .sx{position:absolute;left:5%;bottom:12px;font-size:30px;z-index:4}
+.vac .bub{position:absolute;left:10px;top:10px;max-width:58%;background:#fff;color:#1E2A2A;border-radius:14px 14px 14px 3px;padding:7px 11px;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:6;animation:bubin .4s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bubin{from{transform:scale(.6);opacity:0}}
+.vac .bub b{display:block;font:700 14px/1.2 var(--f-body)}
+.vac .bub small{display:block;font:500 11.5px var(--f-body);color:#5b6b6b;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vdots{display:flex;gap:7px;justify-content:center;margin:-4px 0 14px;flex-wrap:wrap}
+.vdots button{width:11px;height:11px;border-radius:50%;border:0;background:#C7BFA8;cursor:pointer;padding:0}
+.vdots button.on{background:var(--dd,#0F6B5B);transform:scale(1.5)}
+/* impressions */
+.tbv{animation:v-idle 2.6s ease-in-out infinite}
+@keyframes v-idle{50%{transform:scale(1.02,.98) rotate(1.5deg)}}
+.tbv.p-dance{animation:v-dance .9s ease-in-out infinite}
+.tbv.p-jump{animation:v-jump .8s cubic-bezier(.3,0,.4,1) infinite}
+.tbv.p-tall{animation:v-tall 1.8s ease-in-out infinite}
+.tbv.p-climb{animation:v-climb .7s ease-in-out infinite}
+.tbv.p-zen{animation:v-zen 3.2s ease-in-out infinite}
+.tbv.p-munch{animation:v-munch .55s ease-in-out infinite}
+.tbv.p-strut{animation:v-strut 1.1s ease-in-out infinite}
+.tbv.p-flap{animation:v-flap .35s ease-in-out infinite}
+.tbv.p-coaster{animation:v-coast .5s linear infinite}
+.tbv.p-shiver{animation:v-shiv .12s linear infinite}
+.tbv.p-sway{animation:v-sway 2s ease-in-out infinite}
+.tbv.p-sleep{animation:v-sleep 3s ease-in-out infinite}
+.tbv.p-swim{animation:v-swim 1.6s ease-in-out infinite}
+.tbv.p-plane{animation:v-plane 2.4s ease-in-out infinite}
+.tbv.p-spin{animation:v-spin 2.2s ease-in-out infinite}
+@keyframes v-dance{0%,100%{transform:rotate(-10deg)}25%{transform:translateY(-14px) scaleX(-1)}50%{transform:rotate(10deg)}75%{transform:translateY(-14px) scaleX(-1)}}
+@keyframes v-jump{0%,100%{transform:scale(1.1,.86)}45%,70%{transform:translateY(-52px) scale(.92,1.12) rotate(-6deg)}}
+@keyframes v-tall{0%,100%{transform:scale(1,1)}40%,70%{transform:scale(.78,1.3)}}
+@keyframes v-climb{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-22px) rotate(4deg)}}
+@keyframes v-zen{0%,100%{transform:translateY(0) scale(.98)}50%{transform:translateY(-16px) scale(1.01)}}
+@keyframes v-munch{0%,100%{transform:scale(1)}50%{transform:scale(1.09,.92) translateY(3px)}}
+@keyframes v-strut{0%,100%{transform:translateX(-18px) rotate(-5deg)}50%{transform:translateX(18px) rotate(5deg) translateY(-8px)}}
+@keyframes v-flap{0%,100%{transform:rotate(-12deg) scaleX(1)}50%{transform:rotate(12deg) scaleX(-1) translateY(-8px)}}
+@keyframes v-coast{0%{transform:translate(-4px,0) rotate(-6deg)}25%{transform:translate(4px,-6px) rotate(6deg)}50%{transform:translate(-4px,0) rotate(-6deg)}75%{transform:translate(4px,6px) rotate(6deg)}100%{transform:translate(-4px,0) rotate(-6deg)}}
+@keyframes v-shiv{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@keyframes v-sway{0%,100%{transform:rotate(-14deg) translateY(-6px)}50%{transform:rotate(14deg) translateY(-6px)}}
+@keyframes v-sleep{0%,100%{transform:rotate(-64deg) translate(14px,10px) scale(.9)}50%{transform:rotate(-60deg) translate(14px,14px) scale(.93)}}
+@keyframes v-swim{0%,100%{transform:rotate(-18deg) translate(-10px,16px) scale(.9)}50%{transform:rotate(-10deg) translate(10px,10px) scale(.92)}}
+@keyframes v-plane{0%,100%{transform:translateX(-40px) rotate(-14deg)}50%{transform:translateX(40px) rotate(14deg) translateY(-18px)}}
+@keyframes v-spin{0%{transform:rotateY(0)}50%{transform:rotateY(180deg) translateY(-12px)}100%{transform:rotateY(360deg)}}
+@media (prefers-reduced-motion:reduce){.dw .spin,.dw .th,.dc .wd,.dc .seed,.dbtn,.vac *,.tbv{animation:none!important}}
+</style>
+
+<script>
+/* ---------- the durian: whole fruit = the trip, sliced = one day each, with the tiger on holiday ---------- */
+(function(){
+  var hero=document.querySelector('header.hero'), sec=document.getElementById('days-sec'); if(!hero||!sec)return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+  var IMG="data:image/webp;base64,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";
+  var h1=hero.querySelector('h1'); if(h1)h1.innerHTML="Eight days<span> in Malaysia</span>";
+  /* ---- whole durian ---- */
+  var thorns='', sp=[];
+  for(var la=-84;la<=84;la+=9){
+    var rowi=Math.round((la+84)/9), cl=Math.cos(la*Math.PI/180), n=Math.max(2,Math.round(cl*21));
+    for(var j=0;j<n;j++){
+      var lo=-90+(j+.5+(rowi%2?.5:0))*(180/n); if(lo>=90||lo<=-90)continue;
+      var sl=Math.sin(lo*Math.PI/180), cs=Math.cos(lo*Math.PI/180), sa=Math.sin(la*Math.PI/180);
+      sp.push({x:150+118*cl*sl, y:165+124*sa, dx:cl*sl, dy:sa*1.05, z:cl*cs});
+    }
+  }
+  sp.sort(function(u,v){return u.z-v.z;});
+  sp.forEach(function(t){
+    var m=Math.hypot(t.dx,t.dy)||1, dx=t.dx/m, dy=t.dy/m, edge=1-t.z, L=5+22*Math.pow(edge,1.1), w=15, px=-dy*w/2, py=dx*w/2;
+    var tx=t.x+dx*L, ty=t.y+dy*L-2;
+    var lit=Math.max(0,Math.min(1,.5+(-.4*t.dx-.6*t.dy)*.6)), hue=72+lit*10, lt=26+lit*20;
+    thorns+="<polygon points='"+(t.x+px)+","+(t.y+py)+" "+t.x+","+t.y+" "+tx+","+ty+"' fill='hsl("+hue+" 52% "+(lt+9)+"%)'/><polygon points='"+(t.x-px)+","+(t.y-py)+" "+t.x+","+t.y+" "+tx+","+ty+"' fill='hsl("+hue+" 50% "+(lt-6)+"%)'/>";
+  });
+  var whole="<svg viewBox='0 0 300 320' aria-hidden='true'><defs><radialGradient id='dg' cx='40%' cy='35%' r='75%'><stop offset='0' stop-color='#B7CC4A'/><stop offset='.6' stop-color='#7F9B28'/><stop offset='1' stop-color='#4D6616'/></radialGradient></defs><g class='spin'><path d='M144 52C138 34 142 20 150 10C158 20 162 34 156 52Z' fill='#6B4A22'/><ellipse cx='150' cy='165' rx='118' ry='126' fill='url(#dg)'/>"+thorns+"<ellipse cx='108' cy='108' rx='34' ry='20' fill='#fff' opacity='.12' transform='rotate(-28 108 108)'/></g></svg>";
+  /* ---- cut durian ---- */
+  var DAYS=[['d24','24','Thu'],['d25','25','Fri'],['d26','26','Sat'],['d27','27','Sun'],['d28','28','Mon'],['d29','29','Tue'],['d30','30','Wed'],['d31','31','Thu']];
+  function pt(r,deg){var a=(deg-90)*Math.PI/180; return [150+Math.cos(a)*r,150+Math.sin(a)*r];}
+  function sector(r0,r1,a0,a1){var A=pt(r1,a0),B=pt(r1,a1),C=pt(r0,a1),D=pt(r0,a0); return 'M'+D[0]+' '+D[1]+'L'+A[0]+' '+A[1]+'A'+r1+' '+r1+' 0 0 1 '+B[0]+' '+B[1]+'L'+C[0]+' '+C[1]+'A'+r0+' '+r0+' 0 0 0 '+D[0]+' '+D[1]+'Z';}
+  var husk='';
+  for(var k=0;k<40;k++){ var d=k*9, a=pt(124,d-4.5), b=pt(124,d+4.5), t=pt(144,d); husk+="<polygon points='"+a[0]+","+a[1]+" "+b[0]+","+b[1]+" "+t[0]+","+t[1]+"' fill='#6E8A22' stroke='#4C6416' stroke-width='.6'/>"; }
+  var wedges='';
+  DAYS.forEach(function(dd,i){
+    var a0=i*45+2.5, a1=i*45+42.5, mid=i*45+22.5, v=pt(1,mid), tx=(v[0]-150)*9, ty=(v[1]-150)*9, lp=pt(72,mid), sp=pt(46,mid), sw=pt(88,mid);
+    wedges+="<g class='wd' id='wd-"+dd[0]+"' data-id='"+dd[0]+"' data-tx='"+tx.toFixed(1)+"' data-ty='"+ty.toFixed(1)+"' style='--k:"+i+"' role='button' tabindex='0' aria-label='Day "+dd[1]+" "+dd[2]+"'><path class='fl' d='"+sector(24,98,a0,a1)+"' fill='#F8D660' stroke='#F8D660' stroke-width='5' stroke-linejoin='round'/><g transform='translate("+sp[0]+" "+sp[1]+") rotate("+mid+")'><ellipse class='seed' cx='0' cy='0' rx='8' ry='12' fill='#8B5A2B'/></g><circle class='bd' cx='"+lp[0]+"' cy='"+lp[1]+"' r='13.5' fill='var(--c)'/><text x='"+lp[0]+"' y='"+(lp[1]+5)+"' text-anchor='middle' font-size='15' font-weight='700' fill='#fff' font-family='Inter,system-ui,sans-serif'>"+dd[1]+"</text></g>";
+  });
+  var cut="<svg viewBox='0 0 300 300' role='group' aria-label='Durian cut into eight days'><circle cx='150' cy='150' r='146' fill='#00000014' transform='translate(0 8)'/>"+husk+"<circle cx='150' cy='150' r='126' fill='#5A7519'/><circle cx='150' cy='150' r='112' fill='#D8E8A4'/><circle cx='150' cy='150' r='102' fill='#FFF1BE'/><circle cx='150' cy='150' r='20' fill='#EBDDA0'/>"+wedges+"</svg>";
+  var dur=document.createElement('section'); dur.id='durian';
+  dur.innerHTML="<div class='dstage'><div class='dscene' id='dscene'><div class='dw'>"+whole+"</div><div class='dc'>"+cut+"</div><svg class='knife' viewBox='0 0 100 100' preserveAspectRatio='none' aria-hidden='true'><line x1='6' y1='6' x2='94' y2='94' vector-effect='non-scaling-stroke'/></svg></div><p class='dcap' id='dcap'>The whole durian is the whole trip: Kuala Lumpur and Genting Highlands, 24 to 31 December 2026.</p><div class='dctl'><button class='dbtn' id='slice' type='button'>Slice the durian</button><button class='dbtn ghost' id='whole' type='button'>Back to the whole fruit</button></div><div class='dday' id='dday'><button id='dprev' type='button' aria-label='Previous day'>&lsaquo;</button><b id='dlab'></b><button id='dnext' type='button' aria-label='Next day'>&rsaquo;</button></div></div>";
+  h1.insertAdjacentElement('afterend',dur);
+  var facts=hero.querySelector('.facts'); if(facts)dur.appendChild(facts);
+  /* the rest of the hero becomes "trip details" after the days */
+  var det=document.createElement('section'); det.id='details';
+  Array.prototype.slice.call(hero.children).forEach(function(c){ if(c.classList.contains('kicker')||c===h1||c===dur)return; det.appendChild(c); });
+  sec.insertAdjacentElement('afterend',det);
+  /* colour the wedges from each day */
+  DAYS.forEach(function(d){ var el=document.getElementById(d[0]), g=document.getElementById('wd-'+d[0]); if(el&&g)g.style.setProperty('--c',getComputedStyle(el).getPropertyValue('--dd').trim()||'#0F6B5B'); });
+
+  /* ---- tiger on vacation ---- */
+  var SUN="<svg viewBox='0 0 40 16' style='position:absolute;left:33%;top:19%;width:24%;transform:translate(-50%,-50%)'><rect x='1' y='2' width='17' height='11' rx='5' fill='#111'/><rect x='22' y='2' width='17' height='11' rx='5' fill='#111'/><rect x='17' y='5' width='6' height='2.4' fill='#111'/><path d='M4 5l5-1.5M25 5l5-1.5' stroke='#fff' stroke-opacity='.6' stroke-width='1.4' stroke-linecap='round'/></svg>";
+  var RULES=[
+    [/klia|airport/i,'plane','✈️','Tiger is the aeroplane. Brrrm!'],
+    [/bus |sentral|lrt|train/i,'sway','🚌','Hold on, tiger!'],
+    [/skyway/i,'sway','🚡','Dangling in the cable car'],
+    [/snow world/i,'shiver','🥶','Brr! A tiger in the snow'],
+    [/skyworlds|skytropolis|adventureland|superpark|ripley/i,'coaster','🎢','Tiger on a roller coaster'],
+    [/immersify/i,'spin','🎭','Tiger becomes a living painting'],
+    [/batu caves/i,'climb','🐒','Monkey impression, 272 steps'],
+    [/leave |check out/i,'jump','🧳','Bags packed. Tiger is out!'],
+    [/bakuteh|bakery|alor|chicken rice|noodles|cafe|roti|donut|wong mei|dinner|breakfast|lala|food/i,'munch','🍜','Slurping like nobody is watching'],
+    [/pavilion|plaza|outlet|market|petaling|shopping|times square|kkv|cheap|low yat|changkat/i,'strut','🛍️','Shopping catwalk, stripes on'],
+    [/temple|masjid|mosque|thean hou|chin swee/i,'zen','🙏','Statue impression. Do not blink'],
+    [/aquaria/i,'swim','🐠','Tiger tries to swim with fish'],
+    [/bird/i,'flap','🦜','Parrot impression. Flap flap!'],
+    [/tower|petronas|klcc park/i,'tall','🗼','Tiger is a Petronas Tower'],
+    [/abdul samad|bangunan|river of life|trx|melaka/i,'dance','📸','Disco tiger, lights on'],
+    [/check in|back at|boutique|hotel|suites|villa|mews|societe|ninso/i,'sleep','😴','Holiday nap, do not disturb']
+  ];
+  var DEF=['dance','🎵','Dance break!'];
+  function impFor(li){var n=li.dataset.name||''; for(var i=0;i<RULES.length;i++){ if(RULES[i][0].test(n)) return RULES[i].slice(1); } return DEF;}
+  var vac=document.createElement('div'); vac.id='vac'; vac.className='vac';
+  vac.innerHTML="<div class='sun'></div><div class='cl c1'></div><div class='cl c2'></div><div class='sea'></div><div class='sand'></div><span class='palm l' aria-hidden='true'>🌴</span><span class='palm r' aria-hidden='true'>🌴</span><span class='sx' aria-hidden='true'>🧳</span><span class='dr' aria-hidden='true'>🍹</span><div class='tgv' id='tgv' role='button' aria-label='Tiger on holiday. Tap for another impression'><div class='tbv p-dance' id='tbv'><img src='"+IMG+"' alt='A tiger on holiday'>"+SUN+"<span class='hat' aria-hidden='true'>👒</span><span class='pp' id='pp'></span></div></div><div class='bub' id='bub'><b id='vcap'></b><small id='vstop'></small></div><span class='chip' id='vchip'></span>";
+  var dots=document.createElement('div'); dots.className='vdots'; dots.id='vdots';
+  sec.querySelector('.sec-h').insertAdjacentElement('afterend',vac); vac.insertAdjacentElement('afterend',dots);
+  var curDay=null, stops=[], idx=0, pauseUntil=0, tbv=document.getElementById('tbv');
+  function allLis(id){return Array.prototype.slice.call(document.querySelectorAll('#'+id+' ol.tl>li[data-key]'));}
+  function show(i){
+    if(!stops.length)return; idx=(i+stops.length)%stops.length; var li=stops[idx], im=impFor(li);
+    tbv.className='tbv p-'+im[0]; document.getElementById('pp').textContent=im[1];
+    var b=document.getElementById('bub'), nb=b.cloneNode(true); nb.querySelector('#vcap').textContent=im[2]; nb.querySelector('#vstop').textContent=li.dataset.t+' · '+li.dataset.name; b.replaceWith(nb);
+    document.querySelectorAll('li.imp').forEach(function(l){l.classList.remove('imp');}); li.classList.add('imp');
+    Array.prototype.forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===idx);});
+  }
+  document.getElementById('tgv').addEventListener('click',function(){ pauseUntil=Date.now()+9000; show(idx+1); });
+  setInterval(function(){ if(document.body.classList.contains('sliced')&&!document.hidden&&Date.now()>pauseUntil&&!reduce) show(idx+1); },3800);
+  /* ---- selecting a day ---- */
+  var order=DAYS.map(function(d){return d[0];}), dscene=document.getElementById('dscene');
+  function selectDay(id,quiet){
+    if(order.indexOf(id)<0)return;
+    var was=curDay; curDay=id; document.body.classList.add('sliced'); dscene.classList.add('cut');
+    document.querySelectorAll('#days .day').forEach(function(d){d.classList.toggle('sel',d.id===id);});
+    DAYS.forEach(function(d){var g=document.getElementById('wd-'+d[0]); var on=d[0]===id; g.classList.toggle('on',on); g.style.transform=on?'translate('+g.dataset.tx+'px,'+g.dataset.ty+'px)':'';});
+    var dayEl=document.getElementById(id), h3=dayEl.querySelector('h3'), dn=DAYS[order.indexOf(id)];
+    document.getElementById('dlab').innerHTML="Day "+dn[1]+" &middot; "+dn[2]+"<small>"+esc(h3?h3.textContent:'')+"</small>";
+    vac.style.setProperty('--dd',getComputedStyle(dayEl).getPropertyValue('--dd').trim()); dots.style.setProperty('--dd',getComputedStyle(dayEl).getPropertyValue('--dd').trim());
+    document.getElementById('vchip').textContent='Day '+dn[1]+' · '+dn[2];
+    if(id!==was){ vac.style.animation='none'; void vac.offsetWidth; vac.style.animation=''; }
+    stops=allLis(id); dots.innerHTML=''; stops.forEach(function(li,k){var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',li.dataset.name); b.addEventListener('click',function(){pauseUntil=Date.now()+10000; show(k);}); dots.appendChild(b);});
+    show(0); pauseUntil=Date.now()+1500;
+    document.getElementById('dcap').textContent='Each wedge is one day. Tap a wedge, or use the arrows.';
+    if(window.__focusStop&&stops[0]) window.__focusStop(stops[0],'day');
+    if(!quiet){ setTimeout(function(){ var y=dur.getBoundingClientRect().bottom+scrollY-8; window.scrollTo({top:Math.max(0,y),behavior:reduce?'auto':'smooth'}); },60); }
+  }
+  window.__vac={impress:function(li){ var d=li.closest('.day'); if(!d)return; if(d.id!==curDay){ selectDay(d.id,true); } var k=stops.indexOf(li); if(k>-1){ pauseUntil=Date.now()+10000; show(k);} },selectDay:selectDay};
+  dur.querySelectorAll('.wd').forEach(function(g){ g.addEventListener('click',function(){selectDay(g.dataset.id);}); g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();selectDay(g.dataset.id);} }); });
+  document.getElementById('dprev').addEventListener('click',function(){ selectDay(order[(order.indexOf(curDay)+7)%8]); });
+  document.getElementById('dnext').addEventListener('click',function(){ selectDay(order[(order.indexOf(curDay)+1)%8]); });
+  /* slice / whole */
+  document.getElementById('slice').addEventListener('click',function(){
+    if(reduce){ selectDay(curDay||'d24',true); return; }
+    dscene.classList.add('cutting'); setTimeout(function(){ selectDay(curDay||'d24',true); dscene.classList.remove('cutting'); },520);
+  });
+  document.getElementById('whole').addEventListener('click',function(){
+    document.body.classList.remove('sliced'); dscene.classList.remove('cut'); document.getElementById('dcap').textContent='The whole durian is the whole trip: Kuala Lumpur and Genting Highlands, 24 to 31 December 2026.';
+  });
+  /* links to a day open that slice; other code that scrolls to a stop opens its day first */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#d"]'); if(!a)return; var id=a.getAttribute('href').slice(1);
+    if(order.indexOf(id)<0)return; e.preventDefault(); selectDay(id);
+  },true);
+  var sv=Element.prototype.scrollIntoView;
+  Element.prototype.scrollIntoView=function(a){ var d=this.closest&&this.closest('.day'); if(d&&order.indexOf(d.id)>-1&&!d.classList.contains('sel')) selectDay(d.id,true); else if(!document.body.classList.contains('sliced')&&this.closest&&this.closest('#days-sec')) selectDay('d24',true); return sv.call(this,a); };
+  document.querySelectorAll('#days .day').forEach(function(d){d.classList.remove('sel');});
+  curDay='d24'; stops=allLis('d24'); stops.forEach(function(li,k){var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',li.dataset.name); dots.appendChild(b);});
+})();
+</script>
+
+</body></html>
